@@ -16,7 +16,9 @@
         "polyfills": ["zone.js"],
         "tsConfig": "apps/e-proc/tsconfig.app.json",
         "assets": ["apps/e-proc/src/favicon.ico", "apps/e-proc/src/assets"],
-        "styles": ["apps/e-proc/src/styles.scss"],
+        "styles": [
+        "apps/e-proc/src/styles.scss",
+        "node_modules/@nebular/theme/styles/prebuilt/default.css"],
         "scripts": []
       },
       "configurations": {

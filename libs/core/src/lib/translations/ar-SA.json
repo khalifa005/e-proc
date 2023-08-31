@@ -1,0 +1,201 @@
+{
+  "APP_NAME": "اسيج",
+  "E-commerce": "الرئيسية",
+  "About": "عنا",
+  "Hello world !": "اهلا وسهلا",
+  "tickets-list": "الشكاوى",
+  "tickets": "الشكاوى",
+  "add-ticket": "إضافة شكوى",
+  "edit": "تعديل",
+  "add-new": " إضافة جديد",
+  "yes": "نعم",
+  "no": "لا",
+  "address": "العنوان",
+  "submit": "حفظ",
+  "upload": "لايوجد ملف",
+  "forget-password-title": "تعديل كلمة المرور",
+  "welcomeMessage": "مرحبا بك يا {{ firstName }}!",
+  "ar": "عربي",
+  "en": "انجليزي",
+  "client-direct-messages": "client direct messages",
+  "details": "التفاصيل",
+  "CSV-export": "تصدير ك CSV",
+  "data-saved-successfully":"تم حفظ البيانات بنجاح",
+  "error": "خطأ",
+  "done-successfully":"تم بنجاح",
+
+  "feedback": {
+    "feedback": "التقييم",
+    "feedback-welcome-message": "{{ firstName }}مرحبا بك يا ",
+
+    "description": "هل لديك اي اقتراحات",
+    "would-you-like-to-buy-or-renew-your-insurance-policy": "هل تريد شراء او تجديد تامينك",
+    "did-you-hear-about-acig-portal": "هل سمعت عن منصة اسيج",
+    "how-did-you-hear-about-us": "كيف سمعت عنا",
+    "experince-with-estores": "هل لديك خبره في الشراء الالكتروني",
+    "employee-attuide": "تعامل الموظف",
+    "easiness-to-reach-acig-branch": "سهولة الوصول للفرع",
+    "please-rate-the-following": "من فضلك اضف تقيمك للتالي"
+
+  },
+
+
+
+  "sideMenuItems": {
+    "test": ""
+  },
+  "recovery-now": "إسترجاع الأن",
+  "cancel" : "الغاء",
+
+  "login": {
+    "username": "اسم المستخدم",
+    "password": "كلمة المرور",
+    "forget-password-lnk": "نسيت كلمة المرور",
+    "invalid-user-info": "خطأ في اسم المستخدم أو كلمة المرور"
+  },
+
+  "profile": {
+    "restpassword": "تعديل كلمة المرور",
+    "pending": "جارية",
+    "completed": "تم الانتهاء",
+    "notMatchedPassword": "كلمة المرور غير متطابقة",
+    "oldPassword" : "كلمة المرور الحالية",
+    "newPassword" : "كلمة المرور الجديدة",
+    "confirmPassword" : "تأكيد كلمة المرور الجديدة",
+    "reset" : "حفظ"
+  },
+
+  "registeration": {
+    "register-new-user": "تسجيل مستخدم جديد",
+    "firstname": "الاسم الاول",
+    "middlename": "الاسم الثاني",
+    "lastname": "الاسم الاخير",
+    "email": "البريد الالكتروني",
+    "username": "اسم المستخدم",
+    "password": "كلمة المرور",
+    "mobilenumber": "رقم الجوال",
+    "idtype": "نوع الهوية",
+    "nationalid": "رقم الهوية / الأقامة",
+    "passport": "جواز السفر",
+    "register": "تسجيل",
+    "please-enter-valid-email": "من فضلك ادخل بريد الكترونى صحيح",
+    "please-enter-at-least-characters": "الرجاء إدخال {{param}} حرفًا على الأقل.",
+    "password-validation": "يجب أن تحتوي على أحرف كبيرة وصغيرة وأرقام",
+    "already-have-account": "هل لديك حساب؟",
+    "log-in": "تسجيل الدخول",
+    "success-registeration": "تم التسجيل بنجاح ، تحقق من بريدك الإلكتروني",
+    "otp-code": "ادخل الكود المرسل",
+    "verify-mobile-number" : "تأكيد رقم الجوال",
+    "verify" : "تأكيد",
+    "resend" : "إعادة إرسال",
+    "resend-successfully": "تم إعادةالإرسال بنجاح",
+    "reset-password-successfully": "تمت إعادة تعيين كلمة المرور بنجاح"
+  },
+
+  "ticket": {
+
+    "ticket": "طلباتي",
+    "myTicketsList": "طلباتي",
+    "title": "عنوان الطلب",
+    "category": "نوع",
+    "insuranceType": "نوع التامين",
+    "caseTitleType": "نوع الحالة",
+    "policyNumber": "رقم بوصلة التأمين",
+    "policyNumberPlaceholder": "P/205/5515/18/00479064/00",
+    "cancellationRequestDate": "تاريخ الالغاء",
+    "cancellationRequestDatePlaceholder": "ادخل تاريخ الالغاء",
+    "plateLetters": "حرف اللحوحة",
+    "plateLettersPlaceholder": "س ص ع",
+    "plateNumber": "رقم اللوحة",
+    "plateNumberPlaceholder": "751",
+    "najmCaseId": "رقم حالة نجم",
+    "najmCaseIdPlaceholder": "1810009615",
+    "cityId": "المدينة",
+    "file": "اضف ملف",
+    "claimNumberPlaceholder": "C/XXX/XXX/XXXXXXX",
+    "claimNumber": "Claim number",
+    "description": "التفاصيل",
+    "select-category": "اختار نوع الطلب",
+    "order": "تصنيف الطلب",
+    "code": "رقم الطلب",
+
+    "status": "الحالة",
+    "main-information": "المعلومات الاساسية",
+    "addtional-information": "المعلومات الاضافية",
+    "customer-info": "معلومات عن العميل",
+    "department": "الادارة",
+    "policy-type": "نوع التامين",
+    "followup-information": "معلوملت المتابعة",
+    "show-users-related-info": "معلوملت عن المتابعه"
+  },
+
+
+  "user": {
+    "user-interaction": "تفاعل المستخدمين",
+    "created-at": "تاريخ الانشاء",
+    "is-created-by-customer": "تم الانشاء بواسطة العميل",
+    "created-by": "تم الانشاء بواسطة",
+    "last-modified-at": "تاريخ اخر تعديل",
+    "last-modified-by": "اخر تعديل تم بواسطه",
+    "assigned-to": "مستخدم اللذي تم تعينة",
+    "case-owner": "مالك الطلب",
+    "files": "الملفات",
+    "download": "تحميل",
+    "comments": "التعليقات"
+  },
+
+  "unauthorized":{
+    "title": "غير مصرح لك بالدخول.",
+    "message":"لقد حاولت الوصول إلى صفحة ليس لديك صلاحية لها."
+  },
+
+  "validations": {
+    "please-provide-value": "الرجاء ادخال قيمة",
+    "field-required": "هذاالحقل مطلوب",
+    "invalid-field-value": "الرجاء إدخال قيمة صحيحة."
+  },
+
+  "lookups": {
+    "lookups": "مدخلات البحث",
+    "id": "الرقم التعريفي",
+    "name-en": "الاسم بالانجليزي",
+    "name-ar": "الاسم بالعربي",
+    "description": "معلومات تعريفيه",
+    "departments": "الادارات",
+    "groups": "المجموعات",
+    "cities": "المدن",
+    "case-titles": "عناوين الحالات",
+    "insurance-types": "انواع التامين",
+    "ticket-status": "حالات الطلبات",
+    "ticket-categories": "فئات الطلبات",
+    "case-origins": "مركز الطلبات",
+    "roles": "الوظيفة",
+    "add-city": "اضف مدينة",
+    "add-categories": "اضف فئة",
+    "add-insurance-type": "اضف نوع تامين",
+    "add-group": "اضف مجموعه",
+    "add-department": "اضف قسم",
+    "add-case-title": "اضف اسم حاله",
+    "add-case-origin": "اضف مركز الطلب",
+    "group": "المجموعة"
+  },
+
+  "usermanagement":{
+    "user-management": "إدارة المستخدمين",
+    "roles-management": "إدارة أدوار المستخدمين"
+  },
+
+  "table": {
+    "selectPageSize": "اختار عدد",
+    "previous": "قبل",
+    "next": "بعد",
+    "first": "الاول",
+    "total-items": "العدد الاجمالي",
+    "last": "الاخير"
+
+  },
+
+  "forms": {
+    "please-provide-value": "الرجاء ادخال قيمة"
+  }
+}

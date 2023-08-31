@@ -1,0 +1,45 @@
+<div class="header-container">
+  <div class="logo-container">
+    <a   *ngIf="isAuthenticated" (click)="toggleSidebar()" href="#" class="sidebar-toggle">
+      <nb-icon icon="menu-2-outline"></nb-icon>
+    </a>
+    <a class="logo"  (click)="navigateHome()">
+      <img src="assets/images/ACIG.png" alt="" height="60 px" width="210"> </a>
+  </div>
+</div>
+
+<div class="header-container">
+  <nb-actions size="small">
+
+    <nb-action class="control-item">
+      <e-proc-layout-direction-switcher (change)="onDirectionSwitch()" class="control-item direction-switcher"></e-proc-layout-direction-switcher>
+    </nb-action>
+
+    <nb-action class="control-item">
+      <nb-select class="control-item ml-5" [selected]="currentTheme" (selectedChange)="changeTheme($event)" status="primary">
+        <nb-option *ngFor="let theme of themes" [value]="theme.value"> {{ theme.name }}</nb-option>
+      </nb-select>
+    </nb-action>
+
+    <!-- <nb-action class="control-item" *ngIf="isAuthenticated">
+      <nb-select class="control-item ml-5" [selected]="currentRole" (selectedChange)="changeRole($event)"  status="primary">
+        <nb-option *ngFor="let role of userRoles" [value]="role.RoleId"> {{ role.RoleNameEn }}</nb-option>
+      </nb-select>
+    </nb-action> -->
+
+    <nb-action
+    *ngIf="isAuthenticated"
+    class="control-item"
+    icon="bell-outline"></nb-action>
+
+    <nb-action
+    *ngIf="isAuthenticated"
+      class="user-action" >
+      <nb-user [nbContextMenu]="userMenu"
+               [onlyPicture]="userPictureOnly"
+               [name]="userFullName"
+               picture="assets/images/logo.png">
+      </nb-user>
+    </nb-action>
+  </nb-actions>
+</div>

@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Observable, Subject } from 'rxjs';
-import { delay, shareReplay, debounceTime } from 'rxjs/operators';
+import { Subject, shareReplay, Observable, delay, debounceTime } from 'rxjs';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class LayoutService {
+
 
   protected layoutSize$ = new Subject();
   protected layoutSizeChange$ = this.layoutSize$.pipe(

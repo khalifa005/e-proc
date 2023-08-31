@@ -1,0 +1,108 @@
+// @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+
+// themes - our custom or/and out of the box themes
+@import 'themes';
+
+// framework component themes (styles tied to theme variables)
+@import '@nebular/theme/styles/globals';
+
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+@import 'bootstrap/scss/grid';
+
+// @import "../../../../node_modules/ngx-easy-table/style.scss";
+
+// loading progress bar theme
+@import './pace.theme';
+
+@import './layout';
+@import './overrides';
+
+// install the framework and custom global styles
+@include nb-install() {
+
+  // framework global styles
+  @include nb-theme-global();
+
+  @include ngx-layout();
+  // loading progress bar
+  @include ngx-pace-theme();
+
+  @include nb-overrides();
+};
+
+html,
+body {
+  height: 100%;
+   margin: 0;
+   font-family: Roboto,
+    'Helvetica Neue',
+     sans-serif;
+    }
+
+
+    .window-limited-height {
+      width: 40%;
+
+
+    }
+
+    .window-limited-height > nb-card{
+      margin: auto;
+      max-height: 90vh;
+    }
+
+
+    .window-limited-height-large {
+      width: 50%;
+
+
+    }
+
+    .window-limited-height-large > nb-card{
+      margin: auto;
+      max-height: 90vh;
+    }
+
+    .ngx{
+      [dir=rtl] &-table   {
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: table;
+        font-family: Montserrat, Verdana, serif;
+        font-size: 14px;
+        text-align: start;
+        width: 100%;
+      }
+    }
+
+
+    [dir=rtl] .ngx-pagination-range {
+      float: left;
+    }
+
+
+    /* fallback */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url('./fonts/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2') format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}

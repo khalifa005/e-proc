@@ -18,8 +18,13 @@
         "assets": ["apps/e-proc/src/favicon.ico", "apps/e-proc/src/assets"],
         "styles": [
         "apps/e-proc/src/styles.scss",
-        "node_modules/@nebular/theme/styles/prebuilt/default.css"],
-        "scripts": []
+        "node_modules/@nebular/theme/styles/prebuilt/default.css",
+        "node_modules/bootstrap/dist/css/bootstrap.css",
+        "node_modules/nebular-icons/scss/nebular-icons.scss",
+        "libs/nebular/src/lib/styles/styles.scss"
+      ],
+        "scripts": [
+        ]
       },
       "configurations": {
         "production": {

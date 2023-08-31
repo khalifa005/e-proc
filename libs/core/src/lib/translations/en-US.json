@@ -1,0 +1,204 @@
+{
+  "APP_NAME": "AsigCRM",
+  "E-commerce": "Home",
+  "About": "About",
+  "Hello world !": "Hello world !",
+  "Home": "Home",
+  "Version": "Version",
+  "ar": "Arabic",
+  "en": "English",
+  "details": "Details",
+  "edit": "Edit",
+  "add-new": "Add",
+  "yes": "Yes",
+  "no": "No",
+  "CSV-export": "Export to CSV",
+
+  "tickets-list": "Tickets",
+  "tickets": "Tickets",
+  "add-ticket": "Add ticket",
+  "address": "Adress",
+  "submit": "submit",
+  "upload": "No file uploaded yet !",
+  "welcomeMessage": "Thanks for joining, {{ firstName }}! It's great to have you!",
+  "forget-password-title": "Forget Password",
+  "recovery-now": "Recovery Now",
+  "cancel" : "Cancel",
+  "data-saved-successfully":"Data saved successfully",
+  "error": "Error",
+  "done-successfully":"Done Successfully",
+
+  "feedback": {
+    "feedback": "Feedback",
+    "description": "We would like to know if you have any suggestion",
+    "would-you-like-to-buy-or-renew-your-insurance-policy": "Would you like to buy or renew your insurance policy",
+    "did-you-hear-about-acig-portal": "Did you hear about acig portal",
+    "how-did-you-hear-about-us": "How did you hear about us",
+    "experince-with-estores": "Experince with estores",
+    "employee-attuide": "Employee attuide",
+    "easiness-to-reach-acig-branch": "Easiness to reach acig branch",
+    "please-rate-the-following": "Please rate the following",
+    "feedback-welcome-message": "welcome  {{ firstName }} your opinon matter"
+
+  },
+
+  "ticket": {
+    "myTicketsList": "My tickets",
+    "title": "Ticket title",
+    "category": "Category",
+    "insuranceType": "Insurance type",
+    "caseTitleType": "Case title type",
+    "cancellationRequestDate": "cancellation request date",
+    "cancellationRequestDatePlaceholder": "cancellation request date",
+    "policyNumber": "Policy number",
+    "policyNumberPlaceholder": "P/205/5515/18/00479064/00",
+    "claimNumberPlaceholder": "C/XXX/XXX/XXXXXXX",
+    "claimNumber": "Claim number",
+    "plateLetters": "Plate letters",
+    "plateLettersPlaceholder": "ACG",
+    "plateNumber": "Plate number",
+    "plateNumberPlaceholder": "576",
+    "najmCaseId": "Najm cases number",
+    "najmCaseIdPlaceholder": "1810009615",
+    "cityId": "City",
+    "description": "Description",
+    "file": "Add file",
+    "select-category": "Select order category",
+    "select-city": "Select city",
+    "code": "code",
+
+    "status": "status",
+    "main-information": "Main information",
+    "addtional-information": "Addtional information",
+    "customer-info": "Customer info",
+    "department": "Department",
+    "policy-type": "Policy type",
+    "followup-information": "Followup information",
+    "show-users-related-info": "Show users related info"
+  },
+
+  "user": {
+    "user-interaction": "User interaction",
+    "created-at": "Creation date",
+    "is-created-by-customer": "Is created by customer",
+    "created-by": "creation made by",
+    "last-modified-at": "Last modified at",
+    "last-modified-by": "Last modified by",
+    "assigned-to": "Assigned to",
+    "case-owner": "Case owner",
+    "files": "Files",
+    "download": "Download",
+    "comments": "Comments"
+  },
+
+
+  "login": {
+    "username": "User Name",
+    "password": "Password",
+    "forget-password-lnk": "Forget Password",
+    "invalid-user-info": "Invalid User Name or Password"
+  },
+
+
+  "profile": {
+    "restpassword": "Rest Password",
+    "pending": "Pending",
+    "completed": "Completed",
+    "oldPassword" : "Old Password",
+    "newPassword" : "New Password",
+    "confirmPassword" : "Confirm Password",
+    "notMatchedPassword": "Passwords did not match",
+    "reset" : "Reset"
+  },
+
+
+  "registeration": {
+    "register-new-user": "Register New User",
+    "firstname": "First Name",
+    "middlename": "Middle Name",
+    "lastname": "Last Name",
+    "email": "Email",
+    "username": "User Name",
+    "password": "Password",
+    "mobilenumber": "Mobile Number",
+    "idtype": "ID Type",
+    "nationalid": "National ID",
+    "passport": "Passport",
+    "register": "Register",
+    "please-enter-valid-email": "Please enter a valid email address.",
+    "please-enter-at-least-characters": "Please enter at least {{param}} characters.",
+    "password-validation": "Should have capital and small letters and numbers .",
+    "already-have-account": "Already have an account?",
+    "log-in": "Log in",
+    "success-registeration": "Registered successfully",
+    "otp-code": "Enter Code",
+    "verify-mobile-number" : "Verify Mobile Number",
+    "verify" : "Verify",
+    "resend" : "Re-Send",
+    "resend-successfully": "Resend Successfully",
+    "reset-password-successfully": "Password Reseted Successfully"
+  },
+
+
+  "table": {
+    "selectPageSize": "Select page size",
+    "previous": "previous",
+    "next": "next",
+    "first": "first",
+    "total-items": "Total items",
+
+    "last": "last"
+  },
+
+
+ "unauthorized":{
+   "title": "You are not authorized",
+   "message":"You tried to access a page you did not have prior authorization for."
+ },
+
+  "validations": {
+    "please-provide-value": "please fill the required field",
+    "field-required": "This field is required.",
+    "invalid-field-value": "please enter valid value."
+  },
+
+  "forms": {
+    "please-provide-value": "please fill the required field"
+  },
+
+  "lookups": {
+    "lookups": "Lookups",
+    "id": "Id",
+    "name-en": "Englsih name",
+    "name-ar": "Arabic name",
+    "description": "Description",
+    "departments": "Departments",
+    "groups": "Groups",
+    "case-origins": "Case origins",
+    "cities": "Cities",
+    "case-titles": "Case titles",
+    "roles": "Roles",
+    "insurance-types": "Insurance types",
+    "ticket-status": "Ticket status",
+    "ticket-categories": "Ticket categories",
+    "add-city": "Add city",
+    "add-categories": "Add categories",
+    "add-insurance-type": "Add insurance type",
+    "add-group": "Add group",
+    "add-department": "Add department",
+    "add-case-title": "Add case title",
+    "add-case-origin": "Add case origin",
+    "add-role": "Add/edit role",
+    "show-for-customerPortal": "Show for customerPortal",
+    "has-cancellation-request-dependency": "Has cancellation request dependency",
+    "has-policy-data-dependency": "Has policy data dependency",
+    "group": "Group"
+  },
+
+  "usermanagement":{
+    "user-management": "User Management",
+    "roles-management": "Roles Management"
+  }
+
+
+}

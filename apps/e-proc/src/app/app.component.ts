@@ -8,3 +8,14 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'e-proc';
 }
+
+// if (environment.production) {
+//   Logger.enableProductionMode();
+// }
+
+//   if (environment.production) {
+//      this.log.error(environment.serverUrl);
+// }else{
+//   this.log.debug(environment.serverUrl);
+
+// }

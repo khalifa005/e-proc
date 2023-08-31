@@ -1,0 +1,9 @@
+<e-proc-switcher translate
+      [firstValue]="directions.LTR"
+      [secondValue]="directions.RTL"
+      [firstValueLabel]="'en' | translate"
+      [secondValueLabel]="'ar' | translate"
+      [value]="currentDirection"
+      (valueChange)="toggleDirection($event)"
+      [vertical]="vertical">
+    </e-proc-switcher>

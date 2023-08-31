@@ -1,4 +1,3 @@
-import { LayoutService } from './../../../../apps/e-proc/src/app/layout.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
@@ -28,8 +27,18 @@ import {
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
+import { OneColumnLayoutComponent } from './components/one-column-layout/one-column-layout.component';
+import { HeaderComponent } from './components/header/header.component';
+import { CoreModule, LayoutService } from '@e-proc/core';
+import { LayoutDirectionSwitcherComponent } from './components/layout-direction-switcher/layout-direction-switcher.component';
+import { SwitcherComponent } from './components/switcher/switcher.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { FooterComponent } from './components/footer/footer.component';
 
 const NB_MODULES = [
+  TranslateModule,
+
+
   NbLayoutModule,
   NbMenuModule,
   NbUserModule,
@@ -55,28 +64,31 @@ const NB_MODULES = [
   NbDatepickerModule.forRoot(),
 
   NbTimepickerModule.forRoot(),
-    NbDialogModule.forRoot(),
-    NbWindowModule.forRoot(),
-    NbToastrModule.forRoot(),
-    NbLayoutModule,
+  NbDialogModule.forRoot(),
+  NbWindowModule.forRoot(),
+  NbToastrModule.forRoot(),
+  NbLayoutModule,
 ];
 
-export const NB_CORE_PROVIDERS = [
-  LayoutService,
+const COMPONENTS = [
+  HeaderComponent,
+  FooterComponent,
+  OneColumnLayoutComponent,
+  SwitcherComponent,
+  LayoutDirectionSwitcherComponent,
 ];
 
-// const COMPONENTS = [
-//   HeaderComponent,
-//   // FooterComponent,
-// ];
+export const NB_CORE_PROVIDERS = [LayoutService];
 
 @NgModule({
   imports: [
     CommonModule,
+    CoreModule,
     ...NB_MODULES,
-    NbThemeModule.forRoot()
+    NbThemeModule.forRoot(),
   ],
   exports: [
+    ...COMPONENTS,
     CommonModule,
     NbLayoutModule,
     NbMenuModule,
@@ -95,11 +107,11 @@ export const NB_CORE_PROVIDERS = [
     NbDatepickerModule,
     ReactiveFormsModule,
     FormsModule,
-    // ...NB_MODULES
+    // ...NB_MODULES,
   ],
-  declarations: [],
-  providers: [
-    ...NB_CORE_PROVIDERS,
+  declarations: [
+    ...COMPONENTS
   ],
+  providers: [...NB_CORE_PROVIDERS],
 })
 export class NebularModule {}

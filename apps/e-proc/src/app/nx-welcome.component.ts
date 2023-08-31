@@ -1,10 +1,10 @@
+import { LayoutService } from '@e-proc/core';
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, Input, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 import { NbSidebarService, NbMenuService, NbThemeService, NbLayoutDirectionService, NbMediaBreakpointsService, NbLayoutDirection } from '@nebular/theme';
 import { Subject, takeUntil } from 'rxjs';
-import { LayoutService } from './layout.service';
 
 @Component({
   selector: 'e-proc-nx-welcome',
@@ -122,7 +122,6 @@ export class NxWelcomeComponent {
     private menuService: NbMenuService,
     private router: Router,
     private themeService: NbThemeService,
-    private layoutService: LayoutService,
     private directionService: NbLayoutDirectionService,
     private breakpointService: NbMediaBreakpointsService) {
 

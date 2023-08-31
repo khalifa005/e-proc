@@ -77,6 +77,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.currentTheme = this.themeService.currentTheme;
     this.defaultLang = this.i18nService.language;
     this.supportedLanguages = this.i18nService.supportedLanguages;
+    this.log.info(this.defaultLang);
+    this.log.info(this.supportedLanguages);
+    this.log.info("khalifaa");
     // this.authService.InitPayload();
     // this.userRoles = this.authService.userRoles;
     // this.currentRole = this.authService.getSelectedRole();

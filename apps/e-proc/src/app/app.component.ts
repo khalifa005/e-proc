@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { I18nService } from '@e-proc/core';
 import { NbMenuItem } from '@nebular/theme';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
@@ -20,12 +21,15 @@ export class AppComponent implements OnInit {
     constructor(
       public localizationService: TranslateService,
       private changeDetectorRef: ChangeDetectorRef,
+      private i18nService: I18nService,
       private router: Router)
       {
           this.sideMenuTranslationInt();
       }
 
       ngOnInit(): void {
+
+        this.i18nService.init("ar-SA", ['en-US', 'ar-SA']);
 
         this.localizationService.onLangChange.subscribe((event: LangChangeEvent) => {
           this.sideMenuTranslationInt();

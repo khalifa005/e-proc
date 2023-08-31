@@ -1,3 +1,4 @@
+import { LayoutService } from './../../../../apps/e-proc/src/app/layout.service';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
@@ -60,6 +61,10 @@ const NB_MODULES = [
     NbLayoutModule,
 ];
 
+export const NB_CORE_PROVIDERS = [
+  LayoutService,
+];
+
 // const COMPONENTS = [
 //   HeaderComponent,
 //   // FooterComponent,
@@ -93,5 +98,8 @@ const NB_MODULES = [
     // ...NB_MODULES
   ],
   declarations: [],
+  providers: [
+    ...NB_CORE_PROVIDERS,
+  ],
 })
 export class NebularModule {}

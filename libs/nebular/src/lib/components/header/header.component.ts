@@ -5,7 +5,6 @@ import { NbLayoutDirection, NbLayoutDirectionService, NbMediaBreakpointsService,
 
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
-import { NgxPermissionsService, NgxRolesService } from 'ngx-permissions';
 import { Router } from '@angular/router';
 import { LayoutService, Logger } from '@e-proc/core';
 
@@ -63,8 +62,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
               private layoutService: LayoutService,
               private i18nService: I18nService,
               private directionService: NbLayoutDirectionService,
-              private breakpointService: NbMediaBreakpointsService,
-              private permissionsService: NgxPermissionsService) {
+              private breakpointService: NbMediaBreakpointsService) {
 
     this.directionService.onDirectionChange()
     .pipe(takeUntil(this.destroy$))

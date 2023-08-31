@@ -4,7 +4,7 @@
       <nb-icon icon="menu-2-outline"></nb-icon>
     </a>
     <a class="logo"  (click)="navigateHome()">
-      <img src="assets/images/ACIG.png" alt="" height="60 px" width="210"> </a>
+      <img [src]="userPicture" alt="" height="60 px" width="210"> </a>
   </div>
 </div>
 
@@ -38,7 +38,7 @@
       <nb-user [nbContextMenu]="userMenu"
                [onlyPicture]="userPictureOnly"
                [name]="userFullName"
-               picture="assets/images/logo.png">
+               [picture]='userPicture'>
       </nb-user>
     </nb-action>
   </nb-actions>

@@ -50,7 +50,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   currentDirection!: NbLayoutDirection;
   currentTheme = 'default';
   defaultLang ="ar-SA";
-  // userPicture : string = "assets/images/logo.png";
+  userPicture : string = "/assets/logo.png";
 
 
   userMenu = [ { title: 'Profile', link: '/pages/user-profile'   }, { title: 'Log out', link: '/auth/logout'  } ];

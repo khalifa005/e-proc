@@ -29,7 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { OneColumnLayoutComponent } from './components/one-column-layout/one-column-layout.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CoreModule, LayoutService } from '@e-proc/core';
+import { CoreModule, LayoutService, StateService } from '@e-proc/core';
 import { LayoutDirectionSwitcherComponent } from './components/layout-direction-switcher/layout-direction-switcher.component';
 import { SwitcherComponent } from './components/switcher/switcher.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -78,7 +78,7 @@ const COMPONENTS = [
   LayoutDirectionSwitcherComponent,
 ];
 
-export const NB_CORE_PROVIDERS = [LayoutService];
+export const NB_CORE_PROVIDERS = [LayoutService,  StateService];
 
 @NgModule({
   imports: [

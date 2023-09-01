@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { I18nService } from '@e-proc/core';
 import { NbMenuItem } from '@nebular/theme';
@@ -10,7 +10,7 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent implements OnInit, OnDestroy {
   //here is the main page that will still appear in all the app
     menu!: NbMenuItem[];
 
@@ -24,12 +24,13 @@ export class AppComponent implements OnInit {
       private i18nService: I18nService,
       private router: Router)
       {
+        this.i18nService.init("en-US", ['en-US', 'ar-SA']);
           this.sideMenuTranslationInt();
       }
 
       ngOnInit(): void {
 
-        this.i18nService.init("ar-SA", ['en-US', 'ar-SA']);
+
 
         this.localizationService.onLangChange.subscribe((event: LangChangeEvent) => {
           this.sideMenuTranslationInt();
@@ -78,7 +79,10 @@ export class AppComponent implements OnInit {
       this.menu = menuTranslated;
      }
 
-
+     ngOnDestroy() {
+      this.i18nService.destroy();
+  // if (this.subForSubject) this.subForSubject.unsubscribe();
+    }
   }
 
 

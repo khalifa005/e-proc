@@ -14,15 +14,13 @@ import { Subject, takeUntil } from 'rxjs';
 export class LayoutDirectionSwitcherComponent implements OnDestroy {
 
   protected destroy$ = new Subject<void>();
-  // protected lang$ = new Subject<string>();
 
   directions = NbLayoutDirection;
-  currentDirection!: NbLayoutDirection;
+  currentDirection: NbLayoutDirection = NbLayoutDirection.LTR;
 
   @Input() vertical: boolean = false;
 
   constructor(private directionService: NbLayoutDirectionService,
-    // private languageTrackerService: LanguageTrackerService,
     private i18nService: I18nService,
     private router: Router,
     public translate: TranslateService
@@ -39,9 +37,9 @@ export class LayoutDirectionSwitcherComponent implements OnDestroy {
       }
     }
 
-  toggleDirection(newDirection: NbLayoutDirection) {
+  toggleDirection(newDirection: any) {
     this.directionService.setDirection(newDirection);
-//keep this as it will change the lang
+    //keep this as it will change the lang
     if(newDirection == "rtl"){
       this.i18nService.language = 'ar-SA';
 

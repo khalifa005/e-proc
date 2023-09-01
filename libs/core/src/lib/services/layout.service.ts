@@ -1,9 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Subject, shareReplay, Observable, delay, debounceTime } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class LayoutService {
 
 

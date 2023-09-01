@@ -21,6 +21,7 @@
         "node_modules/@nebular/theme/styles/prebuilt/default.css",
         "node_modules/bootstrap/dist/css/bootstrap.css",
         "node_modules/nebular-icons/scss/nebular-icons.scss",
+        "node_modules/ionicons/scss/ionicons.scss",
         "libs/nebular/src/lib/styles/styles.scss"
       ],
         "scripts": [

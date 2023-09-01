@@ -35,6 +35,8 @@ import { SwitcherComponent } from './components/switcher/switcher.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 const NB_MODULES = [
   TranslateModule,
 
@@ -87,6 +89,7 @@ export const NB_CORE_PROVIDERS = [LayoutService,  StateService];
     CoreModule,
     ...NB_MODULES,
     NbThemeModule.forRoot(),
+
   ],
   exports: [
     ...COMPONENTS,

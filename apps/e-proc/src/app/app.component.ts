@@ -26,12 +26,12 @@ export class AppComponent implements OnInit, OnDestroy {
       private i18nService: I18nService,
       private router: Router)
       {
-        this.i18nService.init("en-US", ['en-US', 'ar-SA']);
-          this.sideMenuTranslationInt();
+
       }
 
       ngOnInit(): void {
-
+        this.i18nService.init("en-US", ['en-US', 'ar-SA']);
+        this.sideMenuTranslationInt();
         if (environment.production) {
         Logger.enableProductionMode();
         }

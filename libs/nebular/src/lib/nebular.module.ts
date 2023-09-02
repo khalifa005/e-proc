@@ -34,7 +34,6 @@ import { LayoutDirectionSwitcherComponent } from './components/layout-direction-
 import { SwitcherComponent } from './components/switcher/switcher.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from './components/footer/footer.component';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomInputComponent } from './components/inputs/custom-input/custom-input.component';
 import { CustomTextareaComponent } from './components/inputs/custom-textarea/custom-textarea.component';
 import { LayoutService } from './services/layout.service';
@@ -43,7 +42,6 @@ import { ToastNotificationService } from './services/toast-notification.service'
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe, NumberWithCommasPipe, TranslatorPipe } from './pipes';
 import { ErrorKeysPipe } from './pipes/errorKeys.pipe';
 import { YesNoPipe } from './pipes/yes-no.pipe';
-// import { BrowserModule } from '@angular/platform-browser';
 
 
 const NB_MODULES = [
@@ -108,12 +106,10 @@ export const NB_CORE_PROVIDERS = [LayoutService,  StateService];
     NbDialogModule.forRoot(),
     NbWindowModule.forRoot(),
     NbToastrModule.forRoot(),
+    TranslateModule.forChild(),
   ],
   exports: [
     CommonModule,
-    // BrowserAnimationsModule,
-    // BrowserModule,
-
     ...COMPONENTS,
     ...NB_MODULES,
     ...PIPES,

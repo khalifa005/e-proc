@@ -15,7 +15,12 @@
         "main": "apps/e-proc/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/e-proc/tsconfig.app.json",
-        "assets": ["apps/e-proc/src/favicon.ico", "apps/e-proc/src/assets"],
+        "assets": ["apps/e-proc/src/favicon.ico", "apps/e-proc/src/assets",
+          {
+            "input": "libs/core/src/lib/assets/images",
+            "glob": "**/*",
+            "output": "assets"
+          }],
         "styles": [
         "apps/e-proc/src/styles.scss",
         "node_modules/@nebular/theme/styles/prebuilt/default.css",

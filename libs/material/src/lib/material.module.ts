@@ -17,48 +17,40 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomInputComponent } from './custom-input/custom-input.component';
 
+const MODULES = [
+  FlexLayoutModule,
+  MatInputModule,
+  MatCardModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatListModule,
+  MatIconModule,
+  MatToolbarModule,
+  MatProgressSpinnerModule,
+  MatMenuModule,
+  MatTableModule,
+  MatSelectModule,
+  MatFormFieldModule,
+  FormsModule,
+  ReactiveFormsModule,
+  MatFormFieldModule,
+  MatExpansionModule,
+];
+
+const COMPONENTS = [
+  CustomInputComponent
+]
+
+
 @NgModule({
   imports: [
     CommonModule,
-    FlexLayoutModule,
-    MatInputModule,
-    MatCardModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatProgressSpinnerModule,
-    MatMenuModule,
-    MatTableModule,
-    MatSelectModule,
-    MatFormFieldModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatFormFieldModule,
-
-
-    MatExpansionModule,
+    ...MODULES
   ],
   exports: [
-    FlexLayoutModule,
-    MatInputModule,
-    MatCardModule,
-    MatButtonModule,
-    MatSidenavModule,
-    MatListModule,
-    MatIconModule,
-    MatToolbarModule,
-    MatProgressSpinnerModule,
-    MatMenuModule,
-    MatTableModule,
-    MatSelectModule,
-    MatFormFieldModule,
-    FormsModule,
-    ReactiveFormsModule,
-    CustomInputComponent,
-    MatExpansionModule,
+    ...MODULES,
+    ...COMPONENTS
   ],
-  declarations: [CustomInputComponent],
+  declarations: [...COMPONENTS],
 })
 export class MaterialModule {}

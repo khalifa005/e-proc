@@ -39,8 +39,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const NB_MODULES = [
   TranslateModule,
-
-
   NbLayoutModule,
   NbMenuModule,
   NbUserModule,
@@ -59,16 +57,7 @@ const NB_MODULES = [
   ReactiveFormsModule,
   FormsModule,
 
-  NbThemeModule.forRoot({ name: 'default' }),
 
-  NbSidebarModule.forRoot(),
-  NbMenuModule.forRoot(),
-  NbDatepickerModule.forRoot(),
-
-  NbTimepickerModule.forRoot(),
-  NbDialogModule.forRoot(),
-  NbWindowModule.forRoot(),
-  NbToastrModule.forRoot(),
   NbLayoutModule,
 ];
 
@@ -88,30 +77,20 @@ export const NB_CORE_PROVIDERS = [LayoutService,  StateService];
     BrowserAnimationsModule,
     CoreModule,
     ...NB_MODULES,
-    NbThemeModule.forRoot(),
-
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbSidebarModule.forRoot(),
+    NbMenuModule.forRoot(),
+    NbDatepickerModule.forRoot(),
+    NbTimepickerModule.forRoot(),
+    NbDialogModule.forRoot(),
+    NbWindowModule.forRoot(),
+    NbToastrModule.forRoot(),
   ],
   exports: [
-    ...COMPONENTS,
     CommonModule,
-    NbLayoutModule,
-    NbMenuModule,
-    NbUserModule,
-    NbActionsModule,
-    NbSearchModule,
-    NbSidebarModule,
-    NbContextMenuModule,
-    NbButtonModule,
-    NbSelectModule,
-    NbIconModule,
-    NbEvaIconsModule,
-    NbPopoverModule,
-    NbProgressBarModule,
-    NbInputModule,
-    NbDatepickerModule,
-    ReactiveFormsModule,
-    FormsModule,
-    // ...NB_MODULES,
+    BrowserAnimationsModule,
+    ...COMPONENTS,
+    ...NB_MODULES,
   ],
   declarations: [
     ...COMPONENTS

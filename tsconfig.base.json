@@ -19,6 +19,7 @@
     "paths": {
       "@e-proc/auth": ["libs/auth/src/index.ts"],
       "@e-proc/core": ["libs/core/src/index.ts"],
+      "@e-proc/dashboard": ["libs/dashboard/src/index.ts"],
       "@e-proc/material": ["libs/material/src/index.ts"],
       "@e-proc/nebular": ["libs/nebular/src/index.ts"]
     }

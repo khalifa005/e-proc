@@ -20,6 +20,11 @@
             "input": "libs/core/src/lib/assets/images",
             "glob": "**/*",
             "output": "assets"
+          },
+          {
+            "input": "libs/core/src/lib/assets/icons",
+            "glob": "**/*",
+            "output": "assets"
           }],
         "styles": [
         "apps/e-proc/src/styles.scss",

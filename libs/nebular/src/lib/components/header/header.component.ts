@@ -51,6 +51,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   currentTheme = 'default';
   defaultLang ="ar-SA";
   userPicture : string = "/assets/logo.png";
+  logoPicture : string = "/assets/amana-logo.ico";
 
 
   userMenu = [ { title: 'Profile', link: '/pages/user-profile'   }, { title: 'Log out', link: '/auth/logout'  } ];

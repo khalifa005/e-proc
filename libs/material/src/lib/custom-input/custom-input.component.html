@@ -1,0 +1,13 @@
+
+<div class="form-group" *ngIf="formcontrol !== undefined">
+
+  <label for="TypeId" class="label" >{{lable}}</label>
+
+  <mat-form-field>
+    <input matInput placeholder="username" type="text" [formControl]="formcontrol" required>
+    <mat-error>
+      <span *ngIf="formcontrol.hasError('required') && formcontrol.touched">Required Field</span>
+    </mat-error>
+  </mat-form-field>
+
+</div>

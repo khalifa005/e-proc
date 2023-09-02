@@ -18,6 +18,7 @@
     "baseUrl": ".",
     "paths": {
       "@e-proc/core": ["libs/core/src/index.ts"],
+      "@e-proc/material": ["libs/material/src/index.ts"],
       "@e-proc/nebular": ["libs/nebular/src/index.ts"]
     }
   },

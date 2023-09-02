@@ -1,11 +1,11 @@
 import { NbMenuItem } from '@nebular/theme';
-import { icon } from 'leaflet';
+// import { icon } from 'leaflet';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'E-commerce',
+    title: 'home',
     icon: 'home-outline',
-    link: '/pages/dashboard',
+    link: '/pages/home',
     home: true, //do not affect base route
   },
 

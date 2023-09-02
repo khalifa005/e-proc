@@ -7,7 +7,8 @@
 export const environment = {
   production: false,
   apiBaseUrl: 'http://localhost:3000',
-
+  defaultLanguage: 'en-US',
+  supportedLanguages: ['en-US', 'ar-SA'],
 };
 
 /*

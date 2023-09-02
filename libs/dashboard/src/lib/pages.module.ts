@@ -4,8 +4,9 @@ import { NebularModule } from '@e-proc/nebular';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PagesComponent } from './pages.component';
-import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
+import { PagesRoutingModule } from './pages-routing.module';
+import { TranslateModule } from '@ngx-translate/core';
+import { CoreModule, I18nService } from '@e-proc/core';
 
 const COMPONENTS = [
   PagesComponent,
@@ -16,12 +17,16 @@ const COMPONENTS = [
 
 @NgModule({
   imports: [
-     BrowserModule,
-     RouterModule,
+    //  RouterModule,
+
+    TranslateModule,
      CommonModule,
-     NebularModule
+     CoreModule,
+     NebularModule,
+     PagesRoutingModule,
     ],
   declarations: [...COMPONENTS],
-  exports: [...COMPONENTS],
+  exports: [...COMPONENTS ],
+  providers:[I18nService, TranslateModule]
 })
-export class DashboardModule {}
+export class PagesModule {}

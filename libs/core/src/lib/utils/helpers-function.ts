@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable prefer-const */
 /* eslint-disable no-var */
-import { NgxPermissionsService } from "ngx-permissions";
-
 
 export function isFileArray(data: any[]): boolean {
   return Array.isArray(data) && data.every((value) => value instanceof File);

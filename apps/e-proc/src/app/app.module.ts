@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { appRoutes } from './app.routes';
+import { routes } from './app.routes';
 
 import { NebularModule } from '@e-proc/nebular';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
-    BrowserModule,
     NebularModule,
-
-    RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
+    BrowserAnimationsModule,
+    BrowserModule,
+    RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
   ],
   providers: [],
   bootstrap: [AppComponent],

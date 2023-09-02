@@ -1,5 +1,6 @@
-@import '../@theme/styles/themes';
-
+// @import '../@theme/styles/themes';
+@import 'libs/nebular/src/lib/styles/themes';
+// libs/nebular/src/lib/styles/styles.scss
 @include nb-install-component() {
   ::ng-deep router-outlet + * {
     display: block;

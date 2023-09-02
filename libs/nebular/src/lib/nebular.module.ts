@@ -29,12 +29,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { OneColumnLayoutComponent } from './components/one-column-layout/one-column-layout.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CoreModule, LayoutService, StateService } from '@e-proc/core';
+import { CoreModule } from '@e-proc/core';
 import { LayoutDirectionSwitcherComponent } from './components/layout-direction-switcher/layout-direction-switcher.component';
 import { SwitcherComponent } from './components/switcher/switcher.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from './components/footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomInputComponent } from './components/inputs/custom-input/custom-input.component';
+import { CustomTextareaComponent } from './components/inputs/custom-textarea/custom-textarea.component';
+import { LayoutService } from './services/layout.service';
+import { StateService } from './services/state.service';
+import { ToastNotificationService } from './services/toast-notification.service';
 
 
 const NB_MODULES = [
@@ -67,6 +72,8 @@ const COMPONENTS = [
   OneColumnLayoutComponent,
   SwitcherComponent,
   LayoutDirectionSwitcherComponent,
+  CustomInputComponent,
+  CustomTextareaComponent
 ];
 
 export const NB_CORE_PROVIDERS = [LayoutService,  StateService];

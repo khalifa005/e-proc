@@ -1,0 +1,22 @@
+<div class="form-group" *ngIf="formcontrol !== undefined">
+
+  <label for="description" class="label" translate>{{lable}}</label>
+
+  <textarea
+  rows="5"
+  nbInput fullWidth shape="round"
+  id="description"
+  placeholder="{{ placeHolder | translate }}"
+  [status]="(formcontrol.invalid && (formcontrol.dirty || formcontrol.touched)) ? 'danger' : null"
+  [formControl]="formcontrol"
+  >
+  </textarea>
+
+  <div
+  translate
+  class="text-danger"
+  *ngIf="formcontrol.invalid && (formcontrol.dirty || formcontrol.touched)">
+  validations.please-provide-value
+  </div>
+
+</div>

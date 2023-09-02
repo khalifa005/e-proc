@@ -2,11 +2,11 @@ import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angu
 import { Subscription } from 'rxjs';
 
 @Component({
-  selector: 'amana-micro-frontend-custom-input',
-  templateUrl: './custom-input.component.html',
-  styleUrls: ['./custom-input.component.css'],
+  selector: 'e-proc-mat-custom-input',
+  templateUrl: './mat-custom-input.component.html',
+  styleUrls: ['./mat-custom-input.component.css'],
 })
-export class CustomInputComponent implements OnInit  , OnDestroy {
+export class MatCustomInputComponent implements OnInit  , OnDestroy {
 
   @Output() selectedItemChange = new EventEmitter<any>();
   @Input() selectedItem: any;

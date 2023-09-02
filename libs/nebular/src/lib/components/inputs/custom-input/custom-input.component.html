@@ -1,0 +1,46 @@
+<div class="form-group" *ngIf="formcontrol !== undefined">
+
+  <label for="TypeId" class="label" translate>{{lable}}</label>
+
+  <input
+   type="text"
+   nbInput fullWidth
+   id="TypeId"
+   [disabled]="disabled"
+   [readonly]="readonly"
+   [ngxPattern]="regexPattern"
+   placeholder="{{ placeHolder | translate }}"
+   [status]="(formcontrol.invalid && (formcontrol.dirty || formcontrol.touched)) ? 'danger' : null"
+   [formControl]="formcontrol"
+   >
+
+  <div
+  translate
+  class="text-danger"
+  *ngIf="formcontrol.invalid && (formcontrol.dirty || formcontrol.touched)">
+  validations.please-provide-value
+  </div>
+</div>
+
+
+
+  <div *ngIf="formcontrol === undefined">
+
+    <label
+    *ngIf="lable"
+    for="TypeId" class="label" translate>{{lable}}</label>
+
+    <input
+    type="text"
+    nbInput fullWidth
+    fullWidth
+    class="d-inline"
+    id="TypeId"
+    name="TypeId"
+    [disabled]="disabled"
+    placeholder="{{ placeHolder | translate }}"
+    [required]="isRequired"
+    [(ngModel)]="selectedItem"
+    (ngModelChange)="onItemChanged($event)" >
+
+  </div>

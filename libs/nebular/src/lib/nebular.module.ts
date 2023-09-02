@@ -40,6 +40,9 @@ import { CustomTextareaComponent } from './components/inputs/custom-textarea/cus
 import { LayoutService } from './services/layout.service';
 import { StateService } from './services/state.service';
 import { ToastNotificationService } from './services/toast-notification.service';
+import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe, NumberWithCommasPipe, TranslatorPipe } from './pipes';
+import { ErrorKeysPipe } from './pipes/errorKeys.pipe';
+import { YesNoPipe } from './pipes/yes-no.pipe';
 
 
 const NB_MODULES = [
@@ -76,6 +79,17 @@ const COMPONENTS = [
   CustomTextareaComponent
 ];
 
+const PIPES = [
+  CapitalizePipe,
+  PluralPipe,
+  RoundPipe,
+  TimingPipe,
+  NumberWithCommasPipe,
+  TranslatorPipe,
+  YesNoPipe,
+  ErrorKeysPipe
+];
+
 export const NB_CORE_PROVIDERS = [LayoutService,  StateService];
 
 @NgModule({
@@ -98,9 +112,11 @@ export const NB_CORE_PROVIDERS = [LayoutService,  StateService];
     BrowserAnimationsModule,
     ...COMPONENTS,
     ...NB_MODULES,
+    ...PIPES,
   ],
   declarations: [
-    ...COMPONENTS
+    ...COMPONENTS,
+    ...PIPES,
   ],
   providers: [...NB_CORE_PROVIDERS],
 })

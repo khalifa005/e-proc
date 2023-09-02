@@ -29,6 +29,12 @@
       },
       "configurations": {
         "production": {
+          "fileReplacements": [
+            {
+              "replace": "libs/core/src/lib/env/environment.ts",
+              "with": "libs/core/src/lib/env/environment.prod.ts"
+            }
+          ],
           "budgets": [
             {
               "type": "initial",

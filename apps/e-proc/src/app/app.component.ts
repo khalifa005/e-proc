@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { I18nService } from '@e-proc/core';
+import { I18nService, Logger, environment } from '@e-proc/core';
 import { NbMenuItem } from '@nebular/theme';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
@@ -11,6 +11,8 @@ import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit, OnDestroy {
+  private log = new Logger(AppComponent.name);
+
   //here is the main page that will still appear in all the app
     menu!: NbMenuItem[];
 
@@ -30,6 +32,18 @@ export class AppComponent implements OnInit, OnDestroy {
 
       ngOnInit(): void {
 
+        if (environment.production) {
+        Logger.enableProductionMode();
+        }
+
+        if (environment.production) {
+        this.log.error("environment.production");
+        this.log.error(environment.apiBaseUrl);
+        }else{
+        this.log.debug("server local");
+        this.log.debug(environment.apiBaseUrl);
+
+        }
 
 
         this.localizationService.onLangChange.subscribe((event: LangChangeEvent) => {
@@ -88,16 +102,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
 
 
-// if (environment.production) {
-//   Logger.enableProductionMode();
-// }
 
-//   if (environment.production) {
-//      this.log.error(environment.serverUrl);
-// }else{
-//   this.log.debug(environment.serverUrl);
-
-// }
 
 
 export const MENU_ITEMS: NbMenuItem[] = [

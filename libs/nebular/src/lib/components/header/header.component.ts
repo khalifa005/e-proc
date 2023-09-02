@@ -1,4 +1,3 @@
-import { I18nService } from './../../../../../core/src/lib/services/i18n.service';
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { NbLayoutDirection, NbLayoutDirectionService, NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
@@ -6,7 +5,8 @@ import { NbLayoutDirection, NbLayoutDirectionService, NbMediaBreakpointsService,
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
 import { Router } from '@angular/router';
-import { LayoutService, Logger } from '@e-proc/core';
+import { Logger, I18nService } from '@e-proc/core';
+import { LayoutService } from '../../services/layout.service';
 
 
 @Component({

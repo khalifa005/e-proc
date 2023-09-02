@@ -29,7 +29,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { OneColumnLayoutComponent } from './components/one-column-layout/one-column-layout.component';
 import { HeaderComponent } from './components/header/header.component';
-import { CoreModule } from '@e-proc/core';
 import { LayoutDirectionSwitcherComponent } from './components/layout-direction-switcher/layout-direction-switcher.component';
 import { SwitcherComponent } from './components/switcher/switcher.component';
 import { TranslateModule } from '@ngx-translate/core';
@@ -42,7 +41,9 @@ import { ToastNotificationService } from './services/toast-notification.service'
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe, NumberWithCommasPipe, TranslatorPipe } from './pipes';
 import { ErrorKeysPipe } from './pipes/errorKeys.pipe';
 import { YesNoPipe } from './pipes/yes-no.pipe';
-
+import { CoreModule } from '@e-proc/core';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+// import { BrowserModule } from '@angular/platform-browser';
 
 const NB_MODULES = [
   TranslateModule,
@@ -106,7 +107,6 @@ export const NB_CORE_PROVIDERS = [LayoutService,  StateService];
     NbDialogModule.forRoot(),
     NbWindowModule.forRoot(),
     NbToastrModule.forRoot(),
-    TranslateModule.forChild(),
   ],
   exports: [
     CommonModule,

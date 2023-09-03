@@ -12,9 +12,10 @@ import { TestComponent } from './components/test/test.component';
 @NgModule({
   declarations: [AppComponent, TestComponent],
   imports: [
-    NebularModule,
     BrowserAnimationsModule,
     BrowserModule,
+    NebularModule,
+
     TranslateModule.forRoot(),
     RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
   ],

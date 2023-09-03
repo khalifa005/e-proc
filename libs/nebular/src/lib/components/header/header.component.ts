@@ -132,21 +132,8 @@ export class HeaderComponent implements OnInit, OnDestroy {
 //keep this as it will change the lang
     if(newDirection == "rtl"){
       this.i18nService.language = 'ar-SA';
-      //([`/${url}`])
-
-      // this.router.navigateByUrl('/',{skipLocationChange:true}).then(()=>{
-      //   this.router.navigate([`/`]).then(()=>{
-      //   console.log(`After navigation I am on:${this.router.url}`)
-      //   })
-      //   })
     }else{
       this.i18nService.language = 'en-US';
-    //  this.languageTrackerService.SendMessage("en");
-    // this.router.navigateByUrl('/',{skipLocationChange:true}).then(()=>{
-    //   this.router.navigate([`/`]).then(()=>{
-    //   console.log(`After navigation I am on:${this.router.url}`)
-    //   })
-    //   })
     }
   }
 
@@ -178,7 +165,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   onDirectionSwitch() : void{
-    location.reload();
+    // location.reload();
   }
 
   navigateHome() {

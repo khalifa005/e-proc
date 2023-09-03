@@ -29,10 +29,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { OneColumnLayoutComponent } from './components/one-column-layout/one-column-layout.component';
 import { HeaderComponent } from './components/header/header.component';
+import { CoreModule } from '@e-proc/core';
 import { LayoutDirectionSwitcherComponent } from './components/layout-direction-switcher/layout-direction-switcher.component';
 import { SwitcherComponent } from './components/switcher/switcher.component';
 import { TranslateModule } from '@ngx-translate/core';
 import { FooterComponent } from './components/footer/footer.component';
+// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CustomInputComponent } from './components/inputs/custom-input/custom-input.component';
 import { CustomTextareaComponent } from './components/inputs/custom-textarea/custom-textarea.component';
 import { LayoutService } from './services/layout.service';
@@ -41,9 +43,8 @@ import { ToastNotificationService } from './services/toast-notification.service'
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe, NumberWithCommasPipe, TranslatorPipe } from './pipes';
 import { ErrorKeysPipe } from './pipes/errorKeys.pipe';
 import { YesNoPipe } from './pipes/yes-no.pipe';
-import { CoreModule } from '@e-proc/core';
-// import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // import { BrowserModule } from '@angular/platform-browser';
+
 
 const NB_MODULES = [
   TranslateModule,
@@ -110,6 +111,9 @@ export const NB_CORE_PROVIDERS = [LayoutService,  StateService];
   ],
   exports: [
     CommonModule,
+    // BrowserAnimationsModule,
+    // BrowserModule,
+
     ...COMPONENTS,
     ...NB_MODULES,
     ...PIPES,

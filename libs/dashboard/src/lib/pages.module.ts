@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NebularModule, StateService } from '@e-proc/nebular';
+import { NebularModule } from '@e-proc/nebular';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 import { PagesComponent } from './pages.component';
@@ -19,14 +19,14 @@ const COMPONENTS = [
   imports: [
     //  RouterModule,
 
+    TranslateModule,
      CommonModule,
+     CoreModule,
      NebularModule,
      PagesRoutingModule,
-    TranslateModule,
-
     ],
   declarations: [...COMPONENTS],
   exports: [...COMPONENTS ],
-  providers:[]
+  providers:[I18nService, TranslateModule]
 })
 export class PagesModule {}

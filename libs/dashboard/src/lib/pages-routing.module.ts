@@ -4,7 +4,6 @@ import { PagesComponent } from './pages.component';
 import { TreeviewModule } from '@treeview/ngx-treeview';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
-import { ECommerceComponent } from './pages/e-commerce/e-commerce.component';
 
 const routes: Routes = [{
   path: '',
@@ -15,14 +14,19 @@ const routes: Routes = [{
       component: HomeComponent,
     },
     {
-
-      path: 'dashboard',
-      component: ECommerceComponent,
+      path: 'layout',
+      loadChildren: () => import('./pages/layout/layout.module')
+        .then(m => m.LayoutModule),
     },
     {
       path: 'charts',
       loadChildren: () => import('./pages/charts/charts.module')
         .then(m => m.ChartsModule),
+    },
+    {
+      path: 'extra-components',
+      loadChildren: () => import('./pages/extra-components/extra-components.module')
+        .then(m => m.ExtraComponentsModule),
     },
     // {
     //   path: 'charts',

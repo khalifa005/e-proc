@@ -1,7 +1,0 @@
-<e-proc-legend-chart [legendItems]="chartLegend"></e-proc-legend-chart>
-
-<nb-select class="period-select" [selected]="type" (selectedChange)="changePeriod($event)">
-  <nb-option *ngFor="let period of types" [value]="period">
-    {{ period }}
-  </nb-option>
-</nb-select>

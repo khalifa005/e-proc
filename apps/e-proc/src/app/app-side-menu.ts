@@ -85,10 +85,31 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
-    title: 'E-commerce',
-    icon: 'shopping-cart-outline',
-    link: '/pages/dashboard',
-    home: true, //do not affect base route
+    title: 'Layout',
+    icon: 'layout-outline',
+    children: [
+      {
+        title: 'Stepper',
+        link: '/pages/layout/stepper',
+      },
+      {
+        title: 'List',
+        link: '/pages/layout/list',
+      },
+      {
+        title: 'Infinite List',
+        link: '/pages/layout/infinite-list',
+      },
+      {
+        title: 'Accordion',
+        link: '/pages/layout/accordion',
+      },
+      {
+        title: 'Tabs',
+        pathMatch: 'prefix',
+        link: '/pages/layout/tabs',
+      },
+    ],
   },
   {
     title: 'Charts',
@@ -101,6 +122,36 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'D3',
         link: '/pages/charts/d3',
+      },
+    ],
+  },
+  {
+    title: 'Extra Components',
+    icon: 'message-circle-outline',
+    children: [
+      {
+        title: 'Calendar',
+        link: '/pages/extra-components/calendar',
+      },
+      {
+        title: 'Progress Bar',
+        link: '/pages/extra-components/progress-bar',
+      },
+      {
+        title: 'Spinner',
+        link: '/pages/extra-components/spinner',
+      },
+      {
+        title: 'Alert',
+        link: '/pages/extra-components/alert',
+      },
+      {
+        title: 'Calendar Kit',
+        link: '/pages/extra-components/calendar-kit',
+      },
+      {
+        title: 'Chat',
+        link: '/pages/extra-components/chat',
       },
     ],
   }

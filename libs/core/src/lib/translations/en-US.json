@@ -14,9 +14,6 @@
   "no": "No",
   "CSV-export": "Export to CSV",
 
-  "tickets-list": "Tickets",
-  "tickets": "Tickets",
-  "add-ticket": "Add ticket",
   "address": "Adress",
   "submit": "submit",
   "upload": "No file uploaded yet !",
@@ -31,48 +28,27 @@
   "feedback": {
     "feedback": "Feedback",
     "description": "We would like to know if you have any suggestion",
-    "would-you-like-to-buy-or-renew-your-insurance-policy": "Would you like to buy or renew your insurance policy",
-    "did-you-hear-about-acig-portal": "Did you hear about acig portal",
     "how-did-you-hear-about-us": "How did you hear about us",
     "experince-with-estores": "Experince with estores",
     "employee-attuide": "Employee attuide",
-    "easiness-to-reach-acig-branch": "Easiness to reach acig branch",
     "please-rate-the-following": "Please rate the following",
     "feedback-welcome-message": "welcome  {{ firstName }} your opinon matter"
-
   },
 
-  "ticket": {
-    "myTicketsList": "My tickets",
-    "title": "Ticket title",
+  "entity": {
+    "title": "title",
     "category": "Category",
-    "insuranceType": "Insurance type",
-    "caseTitleType": "Case title type",
-    "cancellationRequestDate": "cancellation request date",
-    "cancellationRequestDatePlaceholder": "cancellation request date",
-    "policyNumber": "Policy number",
-    "policyNumberPlaceholder": "P/205/5515/18/00479064/00",
-    "claimNumberPlaceholder": "C/XXX/XXX/XXXXXXX",
-    "claimNumber": "Claim number",
-    "plateLetters": "Plate letters",
-    "plateLettersPlaceholder": "ACG",
-    "plateNumber": "Plate number",
-    "plateNumberPlaceholder": "576",
-    "najmCaseId": "Najm cases number",
-    "najmCaseIdPlaceholder": "1810009615",
     "cityId": "City",
     "description": "Description",
     "file": "Add file",
     "select-category": "Select order category",
     "select-city": "Select city",
     "code": "code",
-
     "status": "status",
     "main-information": "Main information",
     "addtional-information": "Addtional information",
     "customer-info": "Customer info",
     "department": "Department",
-    "policy-type": "Policy type",
     "followup-information": "Followup information",
     "show-users-related-info": "Show users related info"
   },
@@ -174,20 +150,14 @@
     "description": "Description",
     "departments": "Departments",
     "groups": "Groups",
-    "case-origins": "Case origins",
     "cities": "Cities",
-    "case-titles": "Case titles",
     "roles": "Roles",
-    "insurance-types": "Insurance types",
-    "ticket-status": "Ticket status",
-    "ticket-categories": "Ticket categories",
+    "status": "Status",
+    "categories": "Categories",
     "add-city": "Add city",
     "add-categories": "Add categories",
-    "add-insurance-type": "Add insurance type",
     "add-group": "Add group",
     "add-department": "Add department",
-    "add-case-title": "Add case title",
-    "add-case-origin": "Add case origin",
     "add-role": "Add/edit role",
     "show-for-customerPortal": "Show for customerPortal",
     "has-cancellation-request-dependency": "Has cancellation request dependency",
@@ -197,7 +167,9 @@
 
   "usermanagement":{
     "user-management": "User Management",
-    "roles-management": "Roles Management"
+    "roles-management": "Roles Management",
+    "calender": "Calender",
+    "users": "Users"
   }
 
 

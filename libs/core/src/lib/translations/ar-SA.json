@@ -3,9 +3,7 @@
   "E-commerce": "الرئيسية",
   "About": "عنا",
   "Hello world !": "اهلا وسهلا",
-  "tickets-list": "الشكاوى",
-  "tickets": "الشكاوى",
-  "add-ticket": "إضافة شكوى",
+  "add": "إضافة ",
   "edit": "تعديل",
   "add-new": " إضافة جديد",
   "yes": "نعم",
@@ -27,19 +25,10 @@
   "feedback": {
     "feedback": "التقييم",
     "feedback-welcome-message": "{{ firstName }}مرحبا بك يا ",
-
     "description": "هل لديك اي اقتراحات",
-    "would-you-like-to-buy-or-renew-your-insurance-policy": "هل تريد شراء او تجديد تامينك",
-    "did-you-hear-about-acig-portal": "هل سمعت عن منصة اسيج",
-    "how-did-you-hear-about-us": "كيف سمعت عنا",
-    "experince-with-estores": "هل لديك خبره في الشراء الالكتروني",
-    "employee-attuide": "تعامل الموظف",
-    "easiness-to-reach-acig-branch": "سهولة الوصول للفرع",
     "please-rate-the-following": "من فضلك اضف تقيمك للتالي"
 
   },
-
-
 
   "sideMenuItems": {
     "test": ""
@@ -92,43 +81,23 @@
     "reset-password-successfully": "تمت إعادة تعيين كلمة المرور بنجاح"
   },
 
-  "ticket": {
-
-    "ticket": "طلباتي",
-    "myTicketsList": "طلباتي",
+  "entity": {
     "title": "عنوان الطلب",
     "category": "نوع",
-    "insuranceType": "نوع التامين",
-    "caseTitleType": "نوع الحالة",
-    "policyNumber": "رقم بوصلة التأمين",
-    "policyNumberPlaceholder": "P/205/5515/18/00479064/00",
-    "cancellationRequestDate": "تاريخ الالغاء",
-    "cancellationRequestDatePlaceholder": "ادخل تاريخ الالغاء",
-    "plateLetters": "حرف اللحوحة",
-    "plateLettersPlaceholder": "س ص ع",
-    "plateNumber": "رقم اللوحة",
-    "plateNumberPlaceholder": "751",
-    "najmCaseId": "رقم حالة نجم",
-    "najmCaseIdPlaceholder": "1810009615",
     "cityId": "المدينة",
     "file": "اضف ملف",
-    "claimNumberPlaceholder": "C/XXX/XXX/XXXXXXX",
-    "claimNumber": "Claim number",
     "description": "التفاصيل",
     "select-category": "اختار نوع الطلب",
     "order": "تصنيف الطلب",
     "code": "رقم الطلب",
-
     "status": "الحالة",
     "main-information": "المعلومات الاساسية",
     "addtional-information": "المعلومات الاضافية",
     "customer-info": "معلومات عن العميل",
     "department": "الادارة",
-    "policy-type": "نوع التامين",
     "followup-information": "معلوملت المتابعة",
     "show-users-related-info": "معلوملت عن المتابعه"
   },
-
 
   "user": {
     "user-interaction": "تفاعل المستخدمين",
@@ -164,25 +133,21 @@
     "departments": "الادارات",
     "groups": "المجموعات",
     "cities": "المدن",
-    "case-titles": "عناوين الحالات",
-    "insurance-types": "انواع التامين",
-    "ticket-status": "حالات الطلبات",
-    "ticket-categories": "فئات الطلبات",
-    "case-origins": "مركز الطلبات",
+    "status": "حالات الطلبات",
+    "categories": "فئات الطلبات",
     "roles": "الوظيفة",
     "add-city": "اضف مدينة",
     "add-categories": "اضف فئة",
-    "add-insurance-type": "اضف نوع تامين",
     "add-group": "اضف مجموعه",
     "add-department": "اضف قسم",
-    "add-case-title": "اضف اسم حاله",
-    "add-case-origin": "اضف مركز الطلب",
     "group": "المجموعة"
   },
 
   "usermanagement":{
     "user-management": "إدارة المستخدمين",
-    "roles-management": "إدارة أدوار المستخدمين"
+    "roles-management": "إدارة أدوار المستخدمين",
+    "calender": "التقويم",
+    "users": "المستخدمين"
   },
 
   "table": {
@@ -192,7 +157,6 @@
     "first": "الاول",
     "total-items": "العدد الاجمالي",
     "last": "الاخير"
-
   },
 
   "forms": {

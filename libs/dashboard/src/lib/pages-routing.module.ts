@@ -4,6 +4,7 @@ import { PagesComponent } from './pages.component';
 import { TreeviewModule } from '@treeview/ngx-treeview';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
+import { ECommerceComponent } from './pages/e-commerce/e-commerce.component';
 
 const routes: Routes = [{
   path: '',
@@ -12,6 +13,11 @@ const routes: Routes = [{
     {
       path: 'home',
       component: HomeComponent,
+    },
+    {
+
+      path: 'dashboard',
+      component: ECommerceComponent,
     },
     {
       path: 'charts',

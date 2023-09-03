@@ -1,5 +1,4 @@
-@import '../../../@theme/styles/themes';
-
+@import 'libs/nebular/src/lib/styles/themes';
 @include nb-install-component() {
   e-proc-d3-bar,
   e-proc-d3-pie,

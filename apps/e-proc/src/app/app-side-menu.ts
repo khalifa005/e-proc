@@ -85,6 +85,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
+    title: 'E-commerce',
+    icon: 'shopping-cart-outline',
+    link: '/pages/dashboard',
+    home: true, //do not affect base route
+  },
+  {
     title: 'Charts',
     icon: 'pie-chart-outline',
     children: [

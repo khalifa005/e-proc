@@ -84,6 +84,19 @@ export const MENU_ITEMS: NbMenuItem[] = [
 
     ],
   },
-
+  {
+    title: 'Charts',
+    icon: 'pie-chart-outline',
+    children: [
+      {
+        title: 'Echarts',
+        link: '/pages/charts/echarts',
+      },
+      {
+        title: 'D3',
+        link: '/pages/charts/d3',
+      },
+    ],
+  }
 
 ];

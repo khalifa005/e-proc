@@ -1,0 +1,20 @@
+@import 'libs/nebular/src/lib/styles/themes';
+
+@include nb-install-component() {
+  e-proc-echarts-pie,
+  e-proc-echarts-bar,
+  e-proc-echarts-line,
+  e-proc-echarts-multiple-xaxis,
+  e-proc-echarts-area-stack,
+  e-proc-echarts-bar-animation,
+  e-proc-echarts-radar {
+    display: block;
+    height: nb-theme(card-height-medium);
+    width: 100%;
+  }
+
+  ::ng-deep .echart {
+    height: 100%;
+    width: 100%;
+  }
+}

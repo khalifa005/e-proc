@@ -10,9 +10,13 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
-
       path: 'home',
       component: HomeComponent,
+    },
+    {
+      path: 'charts',
+      loadChildren: () => import('./pages/charts/charts.module')
+        .then(m => m.ChartsModule),
     },
     // {
     //   path: 'charts',

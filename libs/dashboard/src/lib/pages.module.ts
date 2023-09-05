@@ -7,6 +7,7 @@ import { PagesComponent } from './pages.component';
 import { PagesRoutingModule } from './pages-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule, I18nService } from '@e-proc/core';
+import { NbCardModule } from '@nebular/theme';
 
 const COMPONENTS = [
   PagesComponent,
@@ -17,16 +18,14 @@ const COMPONENTS = [
 
 @NgModule({
   imports: [
-    //  RouterModule,
-
     TranslateModule,
      CommonModule,
      CoreModule,
+     NbCardModule,
      NebularModule,
      PagesRoutingModule,
     ],
   declarations: [...COMPONENTS],
   exports: [...COMPONENTS ],
-  providers:[I18nService, TranslateModule]
 })
 export class PagesModule {}

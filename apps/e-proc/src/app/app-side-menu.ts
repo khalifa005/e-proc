@@ -154,6 +154,24 @@ export const MENU_ITEMS: NbMenuItem[] = [
         link: '/pages/extra-components/chat',
       },
     ],
-  }
+  },
+  {
+    title: 'Modal & Overlays',
+    icon: 'browser-outline',
+    children: [
+      {
+        title: 'Dialog',
+        link: '/pages/modal-overlays/dialog',
+      },
+      {
+        title: 'Window',
+        link: '/pages/modal-overlays/window',
+      },
+      {
+        title: 'Toastr',
+        link: '/pages/modal-overlays/toastr',
+      }
 
+    ],
+  }
 ];

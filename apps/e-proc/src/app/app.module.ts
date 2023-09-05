@@ -10,6 +10,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateModule } from '@ngx-translate/core';
 import { TestComponent } from './components/test/test.component';
 import * as echarts from 'echarts';
+import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
+import { CoreModule } from '@angular/flex-layout';
+import { NbSidebarModule, NbMenuModule, NbDatepickerModule, NbTimepickerModule, NbDialogModule, NbWindowModule, NbToastrModule, NbChatModule, NbLayoutModule, NbThemeModule, NbActionsModule, NbContextMenuModule } from '@nebular/theme';
 @NgModule({
   declarations: [AppComponent, TestComponent],
   imports: [
@@ -19,6 +23,27 @@ import * as echarts from 'echarts';
     NgxEchartsModule.forRoot({ echarts }),
     TranslateModule.forRoot(),
     RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
+
+
+    HttpClientModule,
+    NbSidebarModule.forRoot(),
+    NbMenuModule.forRoot(),
+    NbDatepickerModule.forRoot(),
+    NbTimepickerModule.forRoot(),
+    NbDialogModule.forRoot(),
+    NbWindowModule.forRoot(),
+    NbToastrModule.forRoot(),
+    // NbChatModule.forRoot({
+    //   messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
+    // }),
+    NbLayoutModule,
+    HttpClientModule,
+    CommonModule,
+    NbThemeModule.forRoot({ name: 'default' }),
+    NbLayoutModule,
+    NbActionsModule,
+    NbMenuModule.forRoot(),
+    NbContextMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

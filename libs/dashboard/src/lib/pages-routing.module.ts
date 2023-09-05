@@ -19,6 +19,11 @@ const routes: Routes = [{
         .then(m => m.LayoutModule),
     },
     {
+      path: 'modal-overlays',
+      loadChildren: () => import('./pages/modal-overlays/modal-overlays.module')
+        .then(m => m.ModalOverlaysModule),
+    },
+    {
       path: 'charts',
       loadChildren: () => import('./pages/charts/charts.module')
         .then(m => m.ChartsModule),

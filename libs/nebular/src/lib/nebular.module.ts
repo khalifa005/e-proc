@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { ModuleWithProviders, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
   NbActionsModule,
@@ -22,6 +22,12 @@ import {
   NbTimepickerModule,
   NbToastrModule,
   NbWindowModule,
+  CORPORATE_THEME,
+  COSMIC_THEME,
+  DARK_THEME,
+  DEFAULT_THEME,
+  NbOverlayContainerAdapter,
+  NbViewportRulerAdapter,
 } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -43,6 +49,7 @@ import { ToastNotificationService } from './services/toast-notification.service'
 import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe, NumberWithCommasPipe, TranslatorPipe } from './pipes';
 import { ErrorKeysPipe } from './pipes/errorKeys.pipe';
 import { YesNoPipe } from './pipes/yes-no.pipe';
+import { RouterModule } from '@angular/router';
 // import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -98,6 +105,7 @@ export const NB_CORE_PROVIDERS = [LayoutService,  StateService];
     CommonModule,
     // BrowserAnimationsModule,
     // BrowserModule,
+    RouterModule,
     CoreModule,
     ...NB_MODULES,
     NbThemeModule.forRoot({ name: 'default' }),
@@ -105,8 +113,8 @@ export const NB_CORE_PROVIDERS = [LayoutService,  StateService];
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),
     NbTimepickerModule.forRoot(),
-    NbDialogModule.forRoot(),
-    NbWindowModule.forRoot(),
+    // NbDialogModule.forRoot(),
+    // NbWindowModule.forRoot(),
     NbToastrModule.forRoot(),
   ],
   exports: [
@@ -124,4 +132,11 @@ export const NB_CORE_PROVIDERS = [LayoutService,  StateService];
   ],
   providers: [...NB_CORE_PROVIDERS],
 })
-export class NebularModule {}
+export class NebularModule {
+  static forRoot(): ModuleWithProviders<NebularModule> {
+    return {
+      ngModule: NebularModule,
+
+    };
+  }
+}

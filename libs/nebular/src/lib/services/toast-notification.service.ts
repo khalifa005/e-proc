@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { NbComponentStatus, NbGlobalPhysicalPosition, NbGlobalPosition, NbIconConfig, NbToastrService } from '@nebular/theme';
+import { NbComponentStatus, NbGlobalLogicalPosition, NbGlobalPhysicalPosition, NbGlobalPosition, NbIconConfig, NbToastrService } from '@nebular/theme';
 import { CoreModule, NotitficationsDefaultValues } from '@e-proc/core';
 @Injectable({
   providedIn: 'root'
@@ -18,7 +18,7 @@ preventDuplicates = false;
 
 
  showToast(type: NbComponentStatus,
-  title: string,
+  title: string ,
   body: string) {
 
   const config = {
@@ -86,6 +86,38 @@ showNotificationWithCustomIcon(
     body,
     `Toast ${this.index}${titleContent}`,
     config);
+}
+
+types: NbComponentStatus[] = [
+  'primary',
+  'success',
+  'info',
+  'warning',
+  'danger',
+];
+positions: string[] = [
+  NbGlobalPhysicalPosition.TOP_RIGHT,
+  NbGlobalPhysicalPosition.TOP_LEFT,
+  NbGlobalPhysicalPosition.BOTTOM_LEFT,
+  NbGlobalPhysicalPosition.BOTTOM_RIGHT,
+  NbGlobalLogicalPosition.TOP_END,
+  NbGlobalLogicalPosition.TOP_START,
+  NbGlobalLogicalPosition.BOTTOM_END,
+  NbGlobalLogicalPosition.BOTTOM_START,
+];
+
+quotes = [
+  { title: "1", body: 'We rock at Angular' },
+  { title: "2", body: 'Titles are not always needed' },
+  { title: "3", body: 'Toastr rock!' },
+];
+openRandomToast () {
+  const typeIndex = Math.floor(Math.random() * this.types.length);
+  const quoteIndex = Math.floor(Math.random() * this.quotes.length);
+  const type = this.types[typeIndex];
+  const quote = this.quotes[quoteIndex] ;
+
+  this.showToast(type, quote.title, quote.body);
 }
 
 }

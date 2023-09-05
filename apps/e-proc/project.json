@@ -32,7 +32,8 @@
         "node_modules/bootstrap/dist/css/bootstrap.css",
         "node_modules/nebular-icons/scss/nebular-icons.scss",
         "node_modules/ionicons/scss/ionicons.scss",
-        "libs/nebular/src/lib/styles/styles.scss"
+        "libs/nebular/src/lib/styles/styles.scss",
+        "node_modules/leaflet/dist/leaflet.css"
       ],
         "scripts": [
         ]

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { Component } from '@angular/core';
 import { NbDialogRef } from '@nebular/theme';
 
@@ -9,10 +10,6 @@ import { NbDialogRef } from '@nebular/theme';
 export class NotFoundComponent {
 
 
-  constructor(protected ref: NbDialogRef<NotFoundComponent>){
+  constructor(){}
 
-  }
- cancel() {
-    this.ref.close();
-  }
 }

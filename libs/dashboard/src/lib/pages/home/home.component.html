@@ -1,20 +1,2 @@
 <p>home works!</p>
 <h2 translate>APP_NAME</h2>
-<button nbButton (click)="opens()">Open dddd Dialog</button>
-<ng-template #dialog let-data let-ref="dialogRef">
-  <nb-card>
-    <nb-card-header>Template Dialog</nb-card-header>
-    <nb-card-body>{{ data }}</nb-card-body>
-    <nb-card-footer>
-      <button nbButton (click)="ref.close()">Close Dialog</button>
-    </nb-card-footer>
-  </nb-card>
-</ng-template>
-<button nbButton (click)="open(dialog)">Open Dialog</button>
-
-
-<button (click)="openWindow()" nbButton>Open window</button>
-
-    <ng-template #contentTemplate let-data>
-      <p>Here is the text provided via config: "{{ data.text }}"</p>
-    </ng-template>

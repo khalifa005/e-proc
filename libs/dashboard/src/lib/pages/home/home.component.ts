@@ -16,27 +16,5 @@ export class HomeComponent {
     private windowService: NbWindowService) {
   }
 
-  open(dialog: TemplateRef<any>) {
-    this.toastNotificationService.showNotificationWithCustomIcon(NotitficationsDefaultValues.Success, 'checkmark-circle-2-outline', "title", "body");
-    this.dialogService.open(dialog, { context: 'this is some additional data passed to dialog' });
-  }
-
-
-// TODO static must be false as of Angular 9.0.0
-@ViewChild('contentTemplate') contentTemplate: TemplateRef<any>;
-
-openWindow() {
-  this.windowService.open(
-    this.contentTemplate,
-    { title: 'Window content from template', context: { text: 'some text to pass into template' } },
-  );
-}
-
-opens() {
-  this.dialogService.open(NotFoundComponent, {
-    context: {
-    },
-  });
-}
 
 }

@@ -35,6 +35,7 @@ import { NbSidebarModule, NbMenuModule, NbDatepickerModule, NbTimepickerModule, 
     NbChatModule.forRoot({
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
+
   ],
   providers: [],
   bootstrap: [AppComponent],

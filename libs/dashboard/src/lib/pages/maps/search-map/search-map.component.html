@@ -1,0 +1,7 @@
+<nb-card>
+  <nb-card-header>Google Maps with search</nb-card-header>
+  <nb-card-body>
+    <e-proc-search (positionChanged)="setPosition($event)"></e-proc-search>
+    <e-proc-map [searchedPosition]="searchedPosition"></e-proc-map>
+  </nb-card-body>
+</nb-card>

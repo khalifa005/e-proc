@@ -1,4 +1,4 @@
-@import '../../../@theme/styles/themes';
+@import 'libs/nebular/src/lib/styles/themes';
 
 @include nb-install-component() {
   .inputs-group-margin-bottom {

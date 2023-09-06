@@ -8,6 +8,8 @@ import { Component, OnInit, ChangeDetectorRef, OnDestroy } from "@angular/core";
   styleUrls: ['pages.component.scss'],
   template: `
     <router-outlet></router-outlet>
+ <!-- <nb-layout></nb-layout> -->
+
   `,
 })
 //implements OnInit

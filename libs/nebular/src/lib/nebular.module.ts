@@ -12,22 +12,13 @@ import {
   NbSelectModule,
   NbIconModule,
   NbThemeModule,
-  NbLayoutDirection,
-  DEFAULT_MEDIA_BREAKPOINTS,
   NbPopoverModule,
   NbProgressBarModule,
   NbInputModule,
   NbDatepickerModule,
-  NbDialogModule,
   NbTimepickerModule,
   NbToastrModule,
-  NbWindowModule,
-  CORPORATE_THEME,
-  COSMIC_THEME,
-  DARK_THEME,
-  DEFAULT_THEME,
-  NbOverlayContainerAdapter,
-  NbViewportRulerAdapter,
+  NbSpinnerModule,
 } from '@nebular/theme';
 
 import { NbEvaIconsModule } from '@nebular/eva-icons';
@@ -45,11 +36,19 @@ import { CustomTextareaComponent } from './components/inputs/custom-textarea/cus
 import { LayoutService } from './services/layout.service';
 import { StateService } from './services/state.service';
 import { ToastNotificationService } from './services/toast-notification.service';
-import { CapitalizePipe, PluralPipe, RoundPipe, TimingPipe, NumberWithCommasPipe, TranslatorPipe } from './pipes';
+import {
+  CapitalizePipe,
+  PluralPipe,
+  RoundPipe,
+  TimingPipe,
+  NumberWithCommasPipe,
+  TranslatorPipe,
+} from './pipes';
 import { ErrorKeysPipe } from './pipes/errorKeys.pipe';
 import { YesNoPipe } from './pipes/yes-no.pipe';
 import { RouterModule } from '@angular/router';
-
+import { YesNoDropdownComponent } from './components/dropdowns/yes-no-dropdown/yes-no-dropdown.component';
+import { BooleanDropdownComponent } from './components/dropdowns/boolean-dropdown/boolean-dropdown.component';
 
 const NB_MODULES = [
   TranslateModule,
@@ -70,8 +69,7 @@ const NB_MODULES = [
   NbDatepickerModule,
   ReactiveFormsModule,
   FormsModule,
-
-
+  NbSpinnerModule,
   NbLayoutModule,
 ];
 
@@ -82,7 +80,10 @@ const COMPONENTS = [
   SwitcherComponent,
   LayoutDirectionSwitcherComponent,
   CustomInputComponent,
-  CustomTextareaComponent
+  CustomTextareaComponent,
+  YesNoDropdownComponent,
+    BooleanDropdownComponent,
+
 ];
 
 const PIPES = [
@@ -93,10 +94,9 @@ const PIPES = [
   NumberWithCommasPipe,
   TranslatorPipe,
   YesNoPipe,
-  ErrorKeysPipe
 ];
 
-export const NB_CORE_PROVIDERS = [LayoutService,  StateService];
+export const NB_CORE_PROVIDERS = [LayoutService, StateService];
 
 @NgModule({
   imports: [
@@ -104,12 +104,8 @@ export const NB_CORE_PROVIDERS = [LayoutService,  StateService];
     RouterModule,
     CoreModule,
     ...NB_MODULES,
-    NbThemeModule.forRoot({ name: 'default' }),
-    NbSidebarModule.forRoot(),
-    NbMenuModule.forRoot(),
-    NbDatepickerModule.forRoot(),
-    NbTimepickerModule.forRoot(),
-    NbToastrModule.forRoot(),
+
+   
   ],
   exports: [
     CommonModule,
@@ -117,17 +113,9 @@ export const NB_CORE_PROVIDERS = [LayoutService,  StateService];
     ...NB_MODULES,
     ...PIPES,
   ],
-  declarations: [
-    ...COMPONENTS,
-    ...PIPES,
-  ],
+  declarations: [...COMPONENTS, ...PIPES],
   providers: [...NB_CORE_PROVIDERS],
 })
 export class NebularModule {
-  static forRoot(): ModuleWithProviders<NebularModule> {
-    return {
-      ngModule: NebularModule,
 
-    };
-  }
 }

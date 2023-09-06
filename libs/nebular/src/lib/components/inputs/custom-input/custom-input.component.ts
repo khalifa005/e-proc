@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 import { first } from 'rxjs/operators';
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { FormControl, ValidationErrors } from '@angular/forms';
+import { AbstractControl, FormControl, ValidationErrors } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Logger } from '@e-proc/core';
 import { ToastNotificationService } from '../../../services/toast-notification.service';
@@ -25,7 +25,7 @@ export class CustomInputComponent implements OnInit  , OnDestroy{
   // @Input() messages = validationMessages;
   // errors: ValidationErrors
 
-  @Input() formcontrol: FormControl | undefined;
+  @Input() formcontrol!: FormControl | AbstractControl | AbstractControl<any, any>;
   private subs: Subscription[] = [];
 
 

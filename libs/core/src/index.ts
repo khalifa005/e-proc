@@ -1,5 +1,12 @@
 
 export * from './lib/core.module';
+export * from './lib/models/interfaces/event-object.interface';
+export * from './lib/enums/status-code.enum';
+export * from './lib/models/base/lookup.model';
+export * from './lib/models/parameters/lookup-parameter.model';
+export * from './lib/models/parameters/base/paging.model';
+export * from './lib/models/responses/custom-api-response';
+export * from './lib/models/responses/custom-paged-list-response.model';
 export * from './lib/utils/logger.service';
 export * from './lib/services/i18n.service';
 export * from './lib/env/environment';

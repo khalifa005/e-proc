@@ -11,6 +11,8 @@ import { NotitficationsDefaultValues } from '@e-proc/core';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+  selectedItem = '2';
+
   constructor(private dialogService: NbDialogService,
     private toastNotificationService: ToastNotificationService,
     private windowService: NbWindowService) {

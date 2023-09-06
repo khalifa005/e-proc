@@ -38,11 +38,12 @@ const routes: Routes = [{
       loadChildren: () => import('./pages/extra-components/extra-components.module')
         .then(m => m.ExtraComponentsModule),
     },
-    // {
-    //   path: 'charts',
-    //   loadChildren: () => import('./charts/charts.module')
-    //     .then(m => m.ChartsModule),
-    // },
+    {
+      path: 'roles',
+      loadChildren: () => import('./pages/lookups/role/role.module')
+        .then(m => m.RoleModule),
+        // canLoad:[]
+    },
     {
       //this will affect the first page once the app is loaded for the first time because it's not having any URL
       path: '',

@@ -2,6 +2,49 @@
 /* eslint-disable prefer-const */
 /* eslint-disable no-var */
 
+export function convertToFormData( dto: any ) {
+  const formData = new FormData();
+
+  for ( const key of Object.keys(dto) ) {
+    const value = dto[key];
+    let typeOfCurrentValue =  typeof(value) ;
+
+    if(isFileArray(value)){
+      for (let i = 0; i < value.length; i++) {
+        let file: File = value[i];
+        formData.append('files', file, file.name);    // the filed name is `files` because the server side declares a `Files` property
+      }
+    }
+
+    if(typeOfCurrentValue == 'object' && !isFileArray(value))
+    {
+      if(Array.isArray(value)){
+        formData.append(key , JSON.stringify(value));
+
+      }
+      else if (value != 'null' && value != null && value instanceof Date){
+        formData.append(key, value.toDateString());
+      }
+      else if (value === 'null' ||value === null || value === 'undifined' && !isFileArray(value) ){
+        formData.append(key, '');
+      }
+    }
+    else if (value === 'null' ||value === null || value === 'undifined' ){
+      formData.append(key, '');
+    }
+    else
+    {
+      if(!isFileArray(value)){
+        formData.append(key, value);
+      }
+
+    }
+
+  }
+
+  return formData;
+}
+
 export function isFileArray(data: any[]): boolean {
   return Array.isArray(data) && data.every((value) => value instanceof File);
 }

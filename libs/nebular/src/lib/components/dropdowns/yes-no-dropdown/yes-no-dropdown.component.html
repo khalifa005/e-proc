@@ -1,0 +1,44 @@
+<div class="form-group" *ngIf="formcontrol !== undefined">
+
+  <label for="insuranceTypeId" class="label" translate>{{lable}}</label>
+  <nb-select
+  fullWidth class="d-inline"
+  id="isdeleted"
+  name="isdeleted"
+  [status]="(formcontrol.invalid && (formcontrol.dirty || formcontrol.touched)) ? 'danger' : null"
+  [formControl]="formcontrol" >
+
+ <nb-option [value]="false">{{ 'no' | translate }} </nb-option>
+ <nb-option [value]="true">{{ 'yes' | translate }} </nb-option>
+</nb-select>
+
+  <div
+    translate
+    class="text-danger"
+    *ngIf="formcontrol.invalid && (formcontrol.dirty || formcontrol.touched)">
+    validations.please-provide-value
+  </div>
+  </div>
+
+
+  <div *ngIf="formcontrol === undefined">
+
+  <label
+  *ngIf="lable"
+  for="insuranceTypeId" class="label" translate>{{lable}}</label>
+  <nb-select
+  placeholder="Select option"
+  fullWidth
+  class="d-inline"
+  id="isdeleted"
+  name="isdeleted"
+  [disabled]="disabled"
+  [required]="isRequired"
+  [(selected)]="selectedItem"
+  (selectedChange)="onItemChanged($event)" >
+
+ <nb-option [value]="false">{{ 'no' | translate }} </nb-option>
+ <nb-option [value]="true">{{ 'yes' | translate }} </nb-option>
+</nb-select>
+
+  </div>

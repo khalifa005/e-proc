@@ -192,8 +192,15 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Toastr',
         link: '/pages/modal-overlays/toastr',
-      }
-
+      },
+      {
+        title: 'Popover',
+        link: '/pages/modal-overlays/popover',
+      },
+      {
+        title: 'Tooltip',
+        link: '/pages/modal-overlays/tooltip',
+      },
     ],
   }
 ];

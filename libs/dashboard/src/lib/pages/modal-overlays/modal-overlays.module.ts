@@ -18,7 +18,6 @@ import {
   NbSelectModule,
   NbStepperModule,
   NbTabsetModule,
-  NbThemeModule,
   NbTooltipModule,
   NbUserModule,
   NbWindowModule,

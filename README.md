@@ -12,7 +12,13 @@
 10- graphs 
 11- scalable forms 
 12- customs inputs
-13- multiple them selector 
+13- multiple them selector
+14- ngx-easy-table
+15- maps
+16- permission management
+18- chat bot
+19-calender
+20- toast notification   
 
 <a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
 

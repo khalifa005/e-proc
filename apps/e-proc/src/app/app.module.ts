@@ -12,7 +12,6 @@ import { TestComponent } from './components/test/test.component';
 import * as echarts from 'echarts';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { CoreModule } from '@angular/flex-layout';
 import { NbSidebarModule, NbMenuModule, NbDatepickerModule, NbTimepickerModule, NbDialogModule, NbWindowModule, NbToastrModule, NbChatModule, NbLayoutModule, NbThemeModule, NbActionsModule, NbContextMenuModule } from '@nebular/theme';
 @NgModule({
   declarations: [AppComponent, TestComponent],
@@ -20,11 +19,12 @@ import { NbSidebarModule, NbMenuModule, NbDatepickerModule, NbTimepickerModule, 
     CommonModule,
     BrowserAnimationsModule,
     BrowserModule,
+    HttpClientModule,
+
     NebularModule,
     NgxEchartsModule.forRoot({ echarts }),
     TranslateModule.forRoot(),
     RouterModule.forRoot(routes, { initialNavigation: 'enabledBlocking' }),
-    HttpClientModule,
     NbSidebarModule.forRoot(),
     NbMenuModule.forRoot(),
     NbDatepickerModule.forRoot(),

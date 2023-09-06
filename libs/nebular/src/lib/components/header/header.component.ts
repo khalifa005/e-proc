@@ -81,35 +81,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
     this.log.info(this.defaultLang);
     this.log.info(this.supportedLanguages);
     this.log.info("khalifaa");
-    // this.authService.InitPayload();
-    // this.userRoles = this.authService.userRoles;
-    // this.currentRole = this.authService.getSelectedRole();
-
-  //    this.userStoreService.getFullNameFromStore()
-  //    .subscribe(val=>{
-
-  //       let userInfo = this.authService.getUserInfoFromToken();
-  //       let fullNameFromToken =  "";
-  //       if(userInfo != undefined){
-  //         fullNameFromToken = userInfo?.FirstName +" "+ userInfo?.LastName;
-  //         this.userRoles = userInfo.userRoleInfo;
-  //         this.currentRole = this.authService.getSelectedRole();
-  //       }
-  //       this.userFullName = val || fullNameFromToken;
-  //    },
-  //    (erorr) => {
-  //     let userInfo = this.authService.getUserInfoFromToken();
-  //     let fullNameFromToken = "";
-  //     if(userInfo != undefined){
-  //       fullNameFromToken = userInfo?.FirstName +" "+ userInfo?.LastName;
-  //       this.userRoles = userInfo.userRoleInfo;
-  //       this.currentRole = this.authService.getSelectedRole();
-  //     }
-
-  //          this.userFullName = fullNameFromToken;
-
-  //  })
-
 
     const { xl } = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
@@ -148,12 +119,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   changeRole(roleId : number) {
     this.currentRole = roleId;
-     //-- SET Default Role & filter Permission of selected Role
-    // this.authService.setSelectedRole(roleId);
-    // var permissions = this.authService.getRolePermissions(roleId);
-
-    //--- Load Permisssion of selected Role
-    // loadPermissions(this.permissionsService, permissions);
     this.router.navigateByUrl("/");
   }
 

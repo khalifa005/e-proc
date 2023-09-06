@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({ name: 'getTicketStatusStyle' })
@@ -25,15 +26,6 @@ export class DecisionStatusStylePipe implements PipeTransform {
       if (statusId == 4) {
         return 'badge bg-danger text-white font-weight-bold';
       }
-
-
-    //   if (statusId == DecisionStatus.ReturnToSurveyor) {
-    //     return  'badge badge-info mx-1';
-    //   }
-
-    //   if (statusId == DecisionStatus.UnderProgress) {
-    //     return  'badge badge-primary mx-1';
-    //   }
 
       if (statusId == 3) {
         return  'badge badge-warning text-white font-weight-bold';

@@ -5,14 +5,13 @@
   <nb-card-body *ngIf="data" translate>
 
     <div class="mb-2">
-      <button class="btn btn-primary mx-1" (click)="exportToCSV()" translate>CSV-export</button>
-    </div>
 
-    <div class="mb-2">
       <button nbButton status="success"
       (click)="onAddDialogClicked()"
        translate><nb-icon icon="file-add-outline"></nb-icon>add-new</button>
-<!--
+       <button class="btn btn-primary mx-1" (click)="exportToCSV()" translate>CSV-export</button>
+
+       <!--
        <button nbButton status="success"
        (click)="onAddDialogClicked()"
        *ngxPermissionsOnly="['add-sama-close-status','SuperAdmin']; authorisedStrategy: 'show'; unauthorisedStrategy: 'remove'"

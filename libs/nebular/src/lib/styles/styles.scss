@@ -10,8 +10,7 @@
 @import 'bootstrap/scss/variables';
 @import 'bootstrap/scss/mixins';
 @import 'bootstrap/scss/grid';
-
-// @import "../../../../node_modules/ngx-easy-table/style.scss";
+@import "../../../../../node_modules/ngx-easy-table/style.scss";
 
 // loading progress bar theme
 @import './pace.theme';

@@ -8,6 +8,7 @@ import { PagesRoutingModule } from './pages-routing.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule, I18nService } from '@e-proc/core';
 import { NbCardModule } from '@nebular/theme';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 const COMPONENTS = [
   PagesComponent,
@@ -24,6 +25,7 @@ const COMPONENTS = [
      NbCardModule,
      NebularModule,
      PagesRoutingModule,
+     NgxPermissionsModule,
     ],
   declarations: [...COMPONENTS],
   exports: [...COMPONENTS ],

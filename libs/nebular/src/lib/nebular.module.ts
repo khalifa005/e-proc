@@ -49,6 +49,7 @@ import { YesNoPipe } from './pipes/yes-no.pipe';
 import { RouterModule } from '@angular/router';
 import { YesNoDropdownComponent } from './components/dropdowns/yes-no-dropdown/yes-no-dropdown.component';
 import { BooleanDropdownComponent } from './components/dropdowns/boolean-dropdown/boolean-dropdown.component';
+import { DragFileUploaderComponent } from './components/drag-file-uploader/drag-file-uploader.component';
 
 const NB_MODULES = [
   TranslateModule,
@@ -82,8 +83,8 @@ const COMPONENTS = [
   CustomInputComponent,
   CustomTextareaComponent,
   YesNoDropdownComponent,
-    BooleanDropdownComponent,
-
+  BooleanDropdownComponent,
+  DragFileUploaderComponent,
 ];
 
 const PIPES = [
@@ -99,14 +100,7 @@ const PIPES = [
 export const NB_CORE_PROVIDERS = [LayoutService, StateService];
 
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    CoreModule,
-    ...NB_MODULES,
-
-   
-  ],
+  imports: [CommonModule, RouterModule, CoreModule, ...NB_MODULES],
   exports: [
     CommonModule,
     ...COMPONENTS,
@@ -116,6 +110,4 @@ export const NB_CORE_PROVIDERS = [LayoutService, StateService];
   declarations: [...COMPONENTS, ...PIPES],
   providers: [...NB_CORE_PROVIDERS],
 })
-export class NebularModule {
-
-}
+export class NebularModule {}

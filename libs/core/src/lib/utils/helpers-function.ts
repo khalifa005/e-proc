@@ -1,3 +1,6 @@
+// import { AuthService } from '@e-proc/core';
+// import { TranslateService } from '@ngx-translate/core';
+import { NgxPermissionsService } from 'ngx-permissions';
 /* eslint-disable @typescript-eslint/no-inferrable-types */
 /* eslint-disable prefer-const */
 /* eslint-disable no-var */
@@ -83,3 +86,79 @@ let password = Array(10)
 
 return password;
 }
+
+/**
+ * load permissions based on user active role
+ * @param permissionsService
+ * @@param roleFunctions
+ */
+export function loadPermissions(permissionsService : NgxPermissionsService, roleFunctions : string []){
+  //-- Remove All Permessions
+  permissionsService.flushPermissions();
+
+  //-- load new functions
+  permissionsService.loadPermissions(roleFunctions, (permissionName, permissionStore) => {
+    return !!permissionStore[permissionName as string];
+   });
+}
+
+// export function sideMenuTranslationInt(authService : AuthService, localizationService : TranslateService){
+//   var permissions =   authService.getRolePermissions(authService.getSelectedRole());
+//   const menuTranslated = MENU_ITEMS.map(u => ({ ...u, }));
+
+//   menuTranslated.forEach(item => {
+//     item.hidden = false;
+//     //-- check permissions
+//      if(authService.getSelectedRole() != UserRoleEnum.SuperAdmin && item.title!="E-commerce" &&  permissions.length > 0 && !permissions.includes(item.data))
+//      {
+//          //-- In Case Has Childerns check data to
+//          if(item.children)
+//          {
+//             for(const subElement of item.children)
+//             {
+//                if(permissions.includes(subElement.data))
+//                {
+//                  item.hidden = false;
+//                  break;
+//                }
+//                else
+//                {
+//                  item.hidden = true;
+//                }
+//             }
+//          }
+//          else
+//          {
+//              item.hidden = true;
+//          }
+//      }
+
+//     localizationService.get(item.title).subscribe((text:string) => {
+//       item.title = text
+//   });
+
+
+//     if(item.children){
+//      const subMenuTranslated = item.children.map(u => ({ ...u, }));
+
+//      subMenuTranslated.forEach(subItem => {
+//       subItem.hidden = false;
+//       //-- check permissions
+//       if(authService.getSelectedRole() != UserRoleEnum.SuperAdmin && permissions.length > 0 && !permissions.includes(subItem.data))
+//       {
+//          subItem.hidden = true;
+//       }
+
+//       localizationService.get(subItem.title).subscribe((text:string) => {
+//           subItem.title = text
+//         });
+//       });
+
+//       item.children = subMenuTranslated;
+//     }
+
+//   });
+//   //  log.info(MENU_ITEMS);
+//    return menuTranslated;
+//  }
+

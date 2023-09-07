@@ -15,3 +15,5 @@ export * from './lib/services/state.service';
 export * from './lib/services/toast-notification.service';
 
 export * from './lib/components/dropdowns/boolean-dropdown/boolean-dropdown.component';
+
+export * from './lib/components/drag-file-uploader/drag-file-uploader.component';

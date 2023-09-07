@@ -4,6 +4,7 @@ import { PagesComponent } from './pages.component';
 import { TreeviewModule } from '@treeview/ngx-treeview';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
+import { NgxPermissionsModule } from 'ngx-permissions';
 
 const routes: Routes = [{
   path: '',
@@ -59,8 +60,8 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule, TreeviewModule],
+  imports: [RouterModule.forChild(routes), NgxPermissionsModule.forChild()],
+  exports: [RouterModule, TreeviewModule, NgxPermissionsModule],
 })
 export class PagesRoutingModule {
 }

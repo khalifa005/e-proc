@@ -64,11 +64,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
         icon: 'list-outline',
         link: '/pages/user-management/users',
       },
-      {
-        title: 'usermanagement.calender',
-        icon: 'calendar-outline',
-        link: '/pages/user-management/calender',
-      },
+      // {
+      //   title: 'usermanagement.calender',
+      //   icon: 'calendar-outline',
+      //   link: '/pages/user-management/calender',
+      // },
 
     ]
   },
@@ -174,6 +174,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
       {
         title: 'Chat',
         link: '/pages/extra-components/chat',
+      },
+      {
+        title: 'file-uploader',
+        link: '/pages/extra-components/uploader',
       },
     ],
   },

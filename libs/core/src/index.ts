@@ -5,6 +5,7 @@ export * from './lib/enums/status-code.enum';
 export * from './lib/models/base/lookup.model';
 export * from './lib/models/parameters/lookup-parameter.model';
 export * from './lib/models/parameters/base/paging.model';
+export * from './lib/models/user-role-response';
 export * from './lib/models/responses/custom-api-response';
 export * from './lib/models/responses/custom-paged-list-response.model';
 export * from './lib/utils/logger.service';

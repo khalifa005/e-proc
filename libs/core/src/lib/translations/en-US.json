@@ -167,7 +167,7 @@
 
   "usermanagement":{
     "user-management": "User Management",
-    "roles-management": "Roles Management",
+    "roles-management": "Permissions Management",
     "calender": "Calender",
     "users": "Users"
   }

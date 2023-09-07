@@ -36,7 +36,10 @@ export class RoleComponent implements OnInit , OnDestroy {
     order: '',
   };
 
-  data: LookupDto[] = [{Id:1, NameEn:"Admin",NameAr:"Admin",Description:"super admin over system" }] ;
+  data: LookupDto[] = [
+    {Id:1, NameEn:"Admin",NameAr:"مدير الزظام",Description:"super admin over system" },
+    {Id:2, NameEn:"Monitor",NameAr:"مراقب",Description:"view system" }
+  ] ;
   lookupParamsDto = new LookupParameters();
 
   dropDownAllOption = new LookupDto(AppDefaultValues.DropDownAllOption,

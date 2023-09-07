@@ -10,6 +10,7 @@ import { RoleFormComponent } from './form/role-form.component';
 import { NebularModule } from '@e-proc/nebular';
 import { CoreModule } from '@e-proc/core';
 import { PagesModule } from '../../../pages.module';
+import { NgxPermissionsModule } from 'ngx-permissions';
 const routes: Routes = [{
   path: '',
   component: RoleComponent,
@@ -49,6 +50,7 @@ const routes: Routes = [{
     NbProgressBarModule,
     NbAlertModule,
     // NgxPermissionsModule
+    NgxPermissionsModule
 
   ],
   declarations: [RoleComponent, RoleFormComponent]

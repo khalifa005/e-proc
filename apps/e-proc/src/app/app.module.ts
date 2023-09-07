@@ -13,6 +13,7 @@ import * as echarts from 'echarts';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { NbSidebarModule, NbMenuModule, NbDatepickerModule, NbTimepickerModule, NbDialogModule, NbWindowModule, NbToastrModule, NbChatModule, NbLayoutModule, NbThemeModule, NbActionsModule, NbContextMenuModule } from '@nebular/theme';
+import { NgxPermissionsModule } from 'ngx-permissions';
 @NgModule({
   declarations: [AppComponent, TestComponent],
   imports: [
@@ -20,6 +21,7 @@ import { NbSidebarModule, NbMenuModule, NbDatepickerModule, NbTimepickerModule, 
     BrowserAnimationsModule,
     BrowserModule,
     HttpClientModule,
+    NgxPermissionsModule.forRoot(),
     NbThemeModule.forRoot({ name: 'default' }),
     NebularModule,
     NbSidebarModule.forRoot(),

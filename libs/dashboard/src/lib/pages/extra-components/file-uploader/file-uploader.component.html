@@ -1,0 +1,14 @@
+<nb-card>
+  <nb-card-body>
+<div class="form-group">
+  <label class="label" translate>files</label>
+
+  <e-proc-drag-file-uploader
+    [control]="form.controls['file']"
+    requiredFileType="image/png"
+    (fileDroppedEmitter)="onFileChnaged($event)" >
+  </e-proc-drag-file-uploader>
+
+</div>
+</nb-card-body>
+</nb-card>

@@ -1,3 +1,4 @@
+import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 import { NgModule } from '@angular/core';
 import {
   NbActionsModule,
@@ -55,6 +56,7 @@ const COMPONENTS = [
   NebularSelectComponent,
   CalendarKitFullCalendarShowcaseComponent,
   CalendarKitMonthCellComponent,
+  FileUploaderComponent,
 ];
 
 const MODULES = [

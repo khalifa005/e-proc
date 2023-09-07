@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TestAuthComponent } from './components/test-auth/test-auth.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+import { NebularModule } from '@e-proc/nebular';
 
 const routes: Routes = [{
   path: '',
@@ -10,9 +11,12 @@ const routes: Routes = [{
 }];
 
 @NgModule({
-  imports: [CommonModule,
+  imports: [
+    CommonModule,
+    NebularModule,
     RouterModule.forChild(routes),
-    TranslateModule],
+    TranslateModule
+  ],
   declarations: [ TestAuthComponent],
   exports: [TestAuthComponent],
 })

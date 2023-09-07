@@ -8,11 +8,16 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { ChatComponent } from './chat/chat.component';
 import { CalendarKitFullCalendarShowcaseComponent } from './calendar-kit/calendar-kit.component';
+import { FileUploaderComponent } from './file-uploader/file-uploader.component';
 
 const routes: Routes = [{
   path: '',
   component: ExtraComponentsComponent,
   children: [
+    {
+      path: 'uploader',
+      component: FileUploaderComponent,
+    },
     {
       path: 'calendar',
       component: CalendarComponent,

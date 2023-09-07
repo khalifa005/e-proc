@@ -6,7 +6,11 @@
 
     <div class="mb-2">
 
-      <button nbButton status="success"
+      <button
+      *ngxPermissionsOnly="['show-lookups'];
+authorisedStrategy: 'show';
+unauthorisedStrategy: 'remove'"
+      nbButton status="success"
       (click)="onAddDialogClicked()"
        translate><nb-icon icon="file-add-outline"></nb-icon>add-new</button>
        <button class="btn btn-primary mx-1" (click)="exportToCSV()" translate>CSV-export</button>

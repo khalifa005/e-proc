@@ -81,6 +81,7 @@
     "@nx/jest": "16.7.4",
     "@nx/js": "16.7.4",
     "@nx/linter": "16.7.4",
+    "@nx/web": "16.7.4",
     "@nx/workspace": "16.7.4",
     "@schematics/angular": "~16.2.0",
     "@types/crypto-js": "^4.1.2",

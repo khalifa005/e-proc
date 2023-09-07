@@ -218,7 +218,7 @@ export class AuthService {
     //userRolesFakeResponse:UserRole
     this.userRoles =
     [
-      { RoleId: 1, RoleNameEn:"Admin",  RoleNameAr:"Admin", RoleFunctions: ["show-lookups", "show-add-role"] },
+      { RoleId: 1, RoleNameEn:"Admin",  RoleNameAr:"Admin", RoleFunctions: ["SuperAdmin","show-lookups", "show-add-role"] },
       { RoleId: 2, RoleNameEn: "Monitor", RoleNameAr:"Monitor", RoleFunctions: ["show-add-role"] },
     ];
 

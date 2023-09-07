@@ -5,6 +5,7 @@ import { TreeviewModule } from '@treeview/ngx-treeview';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { AuthGuard } from '@e-proc/auth';
 
 const routes: Routes = [{
   path: '',
@@ -56,7 +57,7 @@ const routes: Routes = [{
       component: NotFoundComponent,
     },
   ],
-  // canActivate:[AuthGuard]
+  canActivate:[AuthGuard]
 }];
 
 @NgModule({

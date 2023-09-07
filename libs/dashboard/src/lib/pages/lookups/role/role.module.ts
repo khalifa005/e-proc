@@ -10,11 +10,16 @@ import { RoleFormComponent } from './form/role-form.component';
 import { NebularModule } from '@e-proc/nebular';
 import { CoreModule } from '@e-proc/core';
 import { PagesModule } from '../../../pages.module';
-import { NgxPermissionsModule } from 'ngx-permissions';
+import { NgxPermissionsGuard, NgxPermissionsModule } from 'ngx-permissions';
 const routes: Routes = [{
   path: '',
   component: RoleComponent,
-
+  canActivate: [NgxPermissionsGuard],
+  data: {
+    permissions: {
+      only: ['SuperAdmin'],
+    }
+  },
   children: [
     {
     path: 'list',
@@ -49,7 +54,6 @@ const routes: Routes = [{
     NbChatModule,
     NbProgressBarModule,
     NbAlertModule,
-    // NgxPermissionsModule
     NgxPermissionsModule
 
   ],

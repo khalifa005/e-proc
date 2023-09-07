@@ -1,0 +1,52 @@
+<!-- <h2  class="d-inline" translate>usermanagement.roles-management</h2>
+
+<div class="row" >
+    <div class="col-lg-12">
+      <nb-card>
+        <nb-card-body>
+            <div class="row">
+                <div class="col-lg-6 form-group">
+                    <ngx-role-dropdown
+                    [isRequired]="true"
+                    [disabled]="false"
+                    [readonly]="false"
+                    [selectedItem]="1"
+                    [hideSuperAdmin]=" true"
+                    lable="lookups.roles"
+                    (selectedItemChanged)="onSelectedRoleChnaged($event)">
+                    </ngx-role-dropdown>
+                </div>
+            </div>
+
+
+          <div class="row">
+            <div class="col-md-12 text-center">
+                <h6 translate>Roles Functions</h6>
+              </div>
+
+              <div class="col-md-12">
+                <ngx-treeview
+                *ngIf="items"
+                [config]="config"
+                [items]="items"
+                [ngClass]="{'ng-star-inserted-ar': translate.currentLang === 'ar-SA'}"
+                (selectedChange)="onSelectedTreeChange($event)">
+                </ngx-treeview>
+              </div>
+
+          </div>
+        </nb-card-body>
+      </nb-card>
+
+    </div>
+
+</div>
+
+<button
+*ngIf="showSubmitButton"
+class="col-md-6 offset-md-3"
+type="submit"
+nbButton
+[status]="'success' "
+(click)="saveRoleFunctions()"
+translate>submit</button> -->

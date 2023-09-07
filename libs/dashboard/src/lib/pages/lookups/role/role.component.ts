@@ -37,7 +37,7 @@ export class RoleComponent implements OnInit , OnDestroy {
   };
 
   data: LookupDto[] = [
-    {Id:1, NameEn:"Admin",NameAr:"مدير الزظام",Description:"super admin over system" },
+    {Id:1, NameEn:"Admin",NameAr:"مدير النظام",Description:"super admin over system" },
     {Id:2, NameEn:"Monitor",NameAr:"مراقب",Description:"view system" }
   ] ;
   lookupParamsDto = new LookupParameters();

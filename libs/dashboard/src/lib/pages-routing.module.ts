@@ -57,7 +57,7 @@ const routes: Routes = [{
       component: NotFoundComponent,
     },
   ],
-  canActivate:[AuthGuard]
+  // canActivate:[AuthGuard]
 }];
 
 @NgModule({

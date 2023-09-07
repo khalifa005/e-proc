@@ -218,8 +218,8 @@ export class AuthService {
     //userRolesFakeResponse:UserRole
     this.userRoles =
     [
-      { RoleId: 1, RoleNameEn:"Admin",  RoleNameAr:"Admin", RoleFunctions: ["SuperAdmin","show-lookups", "show-add-role"] },
-      { RoleId: 2, RoleNameEn: "Monitor", RoleNameAr:"Monitor", RoleFunctions: ["show-add-role"] },
+      { RoleId: 1, RoleNameEn:"Admin",  RoleNameAr:"Admin", RoleFunctions: ["SuperAdmin", "view-role-list", "export-role-action"] },
+      { RoleId: 2, RoleNameEn: "Monitor", RoleNameAr:"Monitor", RoleFunctions: ["view-role-list"] },
     ];
 
     //-- SET Permission for User With every Role

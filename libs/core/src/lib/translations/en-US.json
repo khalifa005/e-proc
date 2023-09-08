@@ -1,5 +1,6 @@
 {
-  "APP_NAME": "Amana",
+  "APP_NAME": "Khalifa template",
+  "dynamic-content-based-on-user-permissions":"Dynamic content based on user permissions",
   "E-commerce": "Home",
   "About": "About",
   "Hello world !": "Hello world !",

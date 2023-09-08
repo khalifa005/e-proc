@@ -1,5 +1,6 @@
 {
-  "APP_NAME": "امانة المدينه",
+  "APP_NAME": "Khalifa template",
+  "dynamic-content-based-on-user-permissions":"نص متغير على حسب صلاحيات المستخدم",
   "E-commerce": "الرئيسية",
   "About": "عنا",
   "Hello world !": "اهلا وسهلا",

@@ -3,9 +3,12 @@
 
 <p align="center">
   <img src="./libs/core/src/lib/assets/images/logo.png?raw=true" width="70" alt="Sublime's custom image">
-  ✨ **Kh-admin tempalte will save angular developers +20 working hours** ✨
 </p>
 
+ ✨ **Kh-admin tempalte will save angular developers +20 working hours** ✨
+
+[Watch the live demo video Ar version](https://youtu.be/LfXIjkOTwsQ)
+[Watch the live demo video En version](https://youtu.be/AxZ6mqya47w)
 
 ## Features
 1- Logging with the ability to controle the log level in production 
@@ -41,6 +44,13 @@
 16- Calender
 
 17- Toast notification   
+
+## Coming features
+1- Authentication via Keycloak
+
+2- backend tempalte using .Net 8
+
+if you have any recommendation please share it with us
 
 ### There is a demo for 
 1- (e-proc) app single app using the shared angualr libs 

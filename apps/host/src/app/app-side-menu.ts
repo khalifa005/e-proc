@@ -14,11 +14,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     group: true,
   },
   {
-    title: 'Dynamic model fermentation',
+    title: 'Dynamic module federation',
     icon: 'people-outline',
     children: [
       {
-        title: 'remove application',
+        title: 'remote app',
         icon: 'list-outline',
         link: '/service1',
       },

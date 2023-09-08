@@ -23,7 +23,8 @@
 npx nx serve e-proc
 npx nx serve host --devRemotes=service1
 npx nx graph
-npx nx run admin:build:production
+npx nx run host:build:production
+npx nx run host:build:production --skip-nx-cache
 
 npx nx g @nx/angular:lib dashboard
 npx nx g @nx/angular:lib nebular

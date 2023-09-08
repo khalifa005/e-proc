@@ -1,5 +1,11 @@
-<ul class="remote-menu">
+<!-- <ul class="remote-menu">
   <li><a routerLink="/">Home</a></li>
   <li><a routerLink="service1">Service1</a></li>
 </ul>
 <router-outlet></router-outlet>
+ -->
+
+<e-proc-one-column-layout>
+  <nb-menu  #menuItems  [items]="menu"></nb-menu>
+  <router-outlet></router-outlet>
+</e-proc-one-column-layout>

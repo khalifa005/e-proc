@@ -9,7 +9,6 @@ import { TableModule } from 'ngx-easy-table';
 import { RoleFormComponent } from './form/role-form.component';
 import { NebularModule } from '@e-proc/nebular';
 import { CoreModule } from '@e-proc/core';
-import { PagesModule } from '../../../pages.module';
 import { NgxPermissionsGuard, NgxPermissionsModule } from 'ngx-permissions';
 const routes: Routes = [{
   path: '',
@@ -32,28 +31,28 @@ const routes: Routes = [{
     NebularModule,
     CoreModule,
     CommonModule,
-    NbLayoutModule,
+    // NbLayoutModule,
     RouterModule.forChild(routes),
     ReactiveFormsModule,
     TranslateModule,
-    NbInputModule,
+    // NbInputModule,
     NbCardModule,
-    NbButtonModule,
-    NbActionsModule,
-    NbUserModule,
-    NbCheckboxModule,
-    NbRadioModule,
-    NbDatepickerModule,
-    NbSelectModule,
-    NbIconModule,
+    // NbButtonModule,
+    // NbActionsModule,
+    // NbUserModule,
+    // NbCheckboxModule,
+    // NbRadioModule,
+    // NbDatepickerModule,
+    // NbSelectModule,
+    // NbIconModule,
     TableModule,
     FormsModule,
-    NbRouteTabsetModule,
-    NbTabsetModule,
-    NbListModule,
-    NbChatModule,
-    NbProgressBarModule,
-    NbAlertModule,
+    // NbRouteTabsetModule,
+    // NbTabsetModule,
+    // NbListModule,
+    // NbChatModule,
+    // NbProgressBarModule,
+    // NbAlertModule,
     NgxPermissionsModule
 
   ],

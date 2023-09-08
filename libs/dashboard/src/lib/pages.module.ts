@@ -9,6 +9,8 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CoreModule, I18nService } from '@e-proc/core';
 import { NbCardModule } from '@nebular/theme';
 import { NgxPermissionsModule } from 'ngx-permissions';
+import { FormsModule } from '@angular/forms';
+import { TableModule } from 'ngx-easy-table';
 
 const COMPONENTS = [
   PagesComponent,
@@ -25,6 +27,8 @@ const COMPONENTS = [
      NbCardModule,
      NebularModule,
      PagesRoutingModule,
+     TableModule,
+     FormsModule,
      NgxPermissionsModule,
     ],
   declarations: [...COMPONENTS],

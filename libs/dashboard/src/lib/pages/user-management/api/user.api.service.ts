@@ -3,7 +3,6 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
-import { UserListDto } from '../models/user-list.dto';
 import { environment } from '@e-proc/core';
 import { UserParameters } from '../models/parameters/user-parameters';
 
@@ -36,9 +35,9 @@ register(RegisterObj){
   return this.http.post<any>(`${this.apiURL}/register`,RegisterObj);
 }
 
-updateUser(dto : UserListDto): Observable<any> {
-  return this.http.put<any>(`${this.apiURL}/update`,dto);
-}
+// updateUser(dto : UserListDto): Observable<any> {
+//   return this.http.put<any>(`${this.apiURL}/update`,dto);
+// }
 
 delete(id:number): Observable<any> {
   return this.http

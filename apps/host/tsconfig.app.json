@@ -3,9 +3,12 @@
   "compilerOptions": {
     "outDir": "../../dist/out-tsc",
     "types": [],
-    "target": "ES2020"
   },
   "files": ["src/main.ts"],
-  "include": ["src/**/*.d.ts"],
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.ts",
+    "../../libs/dashboard/**/*.ts",
+  ],
   "exclude": ["jest.config.ts", "src/**/*.test.ts", "src/**/*.spec.ts"]
 }

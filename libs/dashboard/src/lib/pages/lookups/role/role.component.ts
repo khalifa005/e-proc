@@ -5,7 +5,7 @@ import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ApiResponse, AppDefaultValues, EventObject, Logger, LookupDto, LookupParameters, NotitficationsDefaultValues, PagedResponse, StatusCode, capitalizeFirstLetter, convertToFormData } from '@e-proc/core';
 import { ToastNotificationService } from '@e-proc/nebular';
-import { NbDialogService, NbWindowService } from '@nebular/theme';
+import { NbWindowService } from '@nebular/theme';
 import { TranslateService } from '@ngx-translate/core';
 import { ExportToCsv } from 'export-to-csv';
 import { Config, Columns, DefaultConfig } from 'ngx-easy-table';
@@ -48,11 +48,9 @@ export class RoleComponent implements OnInit , OnDestroy {
 
   constructor(private toastNotificationService:ToastNotificationService,
     private apiService:RoleApiService,
-    private readonly cdr: ChangeDetectorRef,
+    // private readonly cdr: ChangeDetectorRef,
     public localizationService: TranslateService,
-    private dialogService: NbDialogService,
-    private windowService: NbWindowService,
-     private router: Router) {
+    private windowService: NbWindowService) {
 
     this.lookupParamsDto.IsDeleted = false;
     this.lookupParamsDto.PageIndex = 1;
@@ -106,7 +104,7 @@ export class RoleComponent implements OnInit , OnDestroy {
 
        if(response.StatusCode == StatusCode.Success){
         this.data = response.Data.Items;
-        this.cdr.markForCheck();
+        // this.cdr.markForCheck();
         // ensure this.pagination.count is set only once and contains count of the whole array, not just paginated one
         this.pagination.count = response.Data.TotalCount;
         this.pagination.limit =  response.Data.PageSize;
@@ -143,7 +141,7 @@ export class RoleComponent implements OnInit , OnDestroy {
 
        if(response.StatusCode == StatusCode.Success){
         this.toastNotificationService.showToast(NotitficationsDefaultValues.Success, 'item', 'updated');
-        this.cdr.markForCheck();
+        // this.cdr.markForCheck();
         this.getData();
        }else{
         this.log.error(response);
@@ -173,7 +171,7 @@ export class RoleComponent implements OnInit , OnDestroy {
 
         if(response.StatusCode == StatusCode.Success){
           this.toastNotificationService.showToast(NotitficationsDefaultValues.Success, 'item', 'deleted');
-          this.cdr.markForCheck();
+          // this.cdr.markForCheck();
           this.getData();
         }else{
           this.log.error(response);
@@ -218,7 +216,7 @@ export class RoleComponent implements OnInit , OnDestroy {
   }
 
   //to get the sor filter event of the grid
-  eventEmitted(event: { event: string; value: any }): void {
+  eventEmitted(event: any): void {
     if (event.event !== 'onClick') {
       this.parseEvent(event);
     }

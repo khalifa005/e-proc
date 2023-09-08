@@ -15,8 +15,27 @@
         "main": "apps/host/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/host/tsconfig.app.json",
-        "assets": ["apps/host/src/favicon.ico", "apps/host/src/assets"],
-        "styles": ["apps/host/src/styles.scss"],
+        "assets": ["apps/host/src/favicon.ico", "apps/host/src/assets",
+        {
+          "input": "libs/core/src/lib/assets/images",
+          "glob": "**/*",
+          "output": "assets"
+        },
+        {
+          "input": "libs/core/src/lib/assets/icons",
+          "glob": "**/*",
+          "output": "assets"
+        }],
+      "styles": [
+      "apps/host/src/styles.scss",
+      "node_modules/@nebular/theme/styles/prebuilt/default.css",
+      "node_modules/bootstrap/dist/css/bootstrap.css",
+      "node_modules/nebular-icons/scss/nebular-icons.scss",
+      "node_modules/ionicons/scss/ionicons.scss",
+      "node_modules/ngx-easy-table/style.css",
+      "libs/nebular/src/lib/styles/styles.scss",
+      "node_modules/leaflet/dist/leaflet.css"
+    ],
         "scripts": [],
         "customWebpackConfig": {
           "path": "apps/host/webpack.config.js"
@@ -24,6 +43,12 @@
       },
       "configurations": {
         "production": {
+          "fileReplacements": [
+            {
+              "replace": "libs/core/src/lib/env/environment.ts",
+              "with": "libs/core/src/lib/env/environment.prod.ts"
+            }
+          ],
           "budgets": [
             {
               "type": "initial",

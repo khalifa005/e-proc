@@ -53,33 +53,34 @@
           </td>
           <td>
             <p style="font-size:1rem" [ngClass]="row.IsDeleted ? '' : '' ">
-              {{row.IsDeleted | yesNo }}
+              <!-- {{row.IsDeleted | yesNo }} -->
             </p>
           </td>
           <td>
-            <button nbButton size="small" status="primary"
+            <!-- <button nbButton size="small" status="primary"
             id="expandButton-{{ index }}"
             (click)="onEditDialogClicked(row.Id)"
-            translate>
-              <nb-icon [options]="{ animation: { type: 'shake' } }" icon="edit-outline"></nb-icon>
-            </button>
+            translate> -->
+
+              <!-- <nb-icon [options]="{ animation: { type: 'shake' } }" icon="edit-outline"></nb-icon> -->
+            <!-- </button> -->
           </td>
           <td *ngIf="!row.IsDeleted">
-            <button nbButton size="small" status="danger"
+            <!-- <button nbButton size="small" status="danger"
             id="expandButton-{{ index }}"
             (click)="onDeletedClicked(row.Id)"
             translate>
               <nb-icon [options]="{ animation: { type: 'flip in Y' } }" icon="trash-2-outline"></nb-icon>
-            </button>
+            </button> -->
           </td>
 
           <td *ngIf="row.IsDeleted">
-            <button nbButton size="small" status="warning"
+            <!-- <button nbButton size="small" status="warning"
             id="expandButton-{{ index }}"
             (click)="onReactivateClicked(row.Id)"
             translate>
               <nb-icon [options]="{ animation: { type: 'zoom' } }" icon="refresh-outline"></nb-icon>
-            </button>
+            </button> -->
           </td>
         </ng-template>
       </ngx-table>
@@ -87,17 +88,11 @@
         <th colspan="5" translate>
           <span class="mb-2" translate>table.total-items</span>
           <span class="mb-2">: {{ pagination.count }} </span>
-          <span class="mb-2">page: {{ page }} </span> 
+          <span class="mb-2">page: {{ page }} </span>
         </th>
       </ng-template>
     </div>
   </div>
-
-  <ng-template #loadingTemplate>
-    <td [attr.colspan]="columns.length">
-      <div class="loader">Loading...</div>
-    </td>
-  </ng-template>
 
   <ng-template #filtersTemplate>
     <th>

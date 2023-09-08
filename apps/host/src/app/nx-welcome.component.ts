@@ -1,321 +1,430 @@
-/* eslint-disable @typescript-eslint/no-empty-function */
-import { Component, OnDestroy, OnInit, ViewEncapsulation } from '@angular/core';
-import { Logger, LookupDto, LookupParameters, AppDefaultValues, ApiResponse, PagedResponse, StatusCode, NotitficationsDefaultValues, convertToFormData, EventObject, capitalizeFirstLetter } from '@e-proc/core';
-import { ToastNotificationService } from '@e-proc/nebular';
-import { NbWindowService } from '@nebular/theme';
-import { TranslateService } from '@ngx-translate/core';
-import { ExportToCsv } from 'export-to-csv';
-import { Config, Columns, DefaultConfig } from 'ngx-easy-table';
-import { Subject, Subscription, takeUntil } from 'rxjs';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'e-proc-nx-welcome',
   template: `
-<nb-card>
-  <nb-card-header translate>
-    lookups.roles
-  </nb-card-header>
-  <nb-card-body *ngIf="data" translate>
-
-    <div class="mb-2">
-
-      <button
-      *ngxPermissionsOnly="['add-role-action']; authorisedStrategy: 'show'; unauthorisedStrategy: 'remove'"
-      nbButton status="success"
-      (click)="onAddDialogClicked()"
-       translate><nb-icon icon="file-add-outline"></nb-icon>add-new</button>
-
-       <button
-       *ngxPermissionsOnly="['export-role-action']; authorisedStrategy: 'show'; unauthorisedStrategy: 'remove'"
-       class="btn btn-primary mx-1" (click)="exportToCSV()" translate>CSV-export</button>
+    <!--
+     * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+     This is a starter component and can be deleted.
+     * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+     Delete this file and get started with your project!
+     * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+     -->
+    <style>
+      html {
+        -webkit-text-size-adjust: 100%;
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+          'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+          'Noto Color Emoji';
+        line-height: 1.5;
+        tab-size: 4;
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: inherit;
+        line-height: inherit;
+        margin: 0;
+      }
+      h1,
+      h2,
+      p,
+      pre {
+        margin: 0;
+      }
+      *,
+      ::before,
+      ::after {
+        box-sizing: border-box;
+        border-width: 0;
+        border-style: solid;
+        border-color: currentColor;
+      }
+      h1,
+      h2 {
+        font-size: inherit;
+        font-weight: inherit;
+      }
+      a {
+        color: inherit;
+        text-decoration: inherit;
+      }
+      pre {
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          'Liberation Mono', 'Courier New', monospace;
+      }
+      svg {
+        display: block;
+        vertical-align: middle;
+      }
+      svg {
+        shape-rendering: auto;
+        text-rendering: optimizeLegibility;
+      }
+      pre {
+        background-color: rgba(55, 65, 81, 1);
+        border-radius: 0.25rem;
+        color: rgba(229, 231, 235, 1);
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+          'Liberation Mono', 'Courier New', monospace;
+        overflow: scroll;
+        padding: 0.5rem 0.75rem;
+      }
+      .shadow {
+        box-shadow: 0 0 #0000, 0 0 #0000, 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05);
+      }
+      .rounded {
+        border-radius: 1.5rem;
+      }
+      .wrapper {
+        width: 100%;
+      }
+      .container {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 768px;
+        padding-bottom: 3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        color: rgba(55, 65, 81, 1);
+        width: 100%;
+      }
+      #welcome {
+        margin-top: 2.5rem;
+      }
+      #welcome h1 {
+        font-size: 3rem;
+        font-weight: 500;
+        letter-spacing: -0.025em;
+        line-height: 1;
+      }
+      #welcome span {
+        display: block;
+        font-size: 1.875rem;
+        font-weight: 300;
+        line-height: 2.25rem;
+        margin-bottom: 0.5rem;
+      }
+      #hero {
+        align-items: center;
+        background-color: hsla(214, 62%, 21%, 1);
+        border: none;
+        box-sizing: border-box;
+        color: rgba(55, 65, 81, 1);
+        display: grid;
+        grid-template-columns: 1fr;
+        margin-top: 3.5rem;
+      }
+      #hero .text-container {
+        color: rgba(255, 255, 255, 1);
+        padding: 3rem 2rem;
+      }
+      #hero .text-container h2 {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        position: relative;
+      }
+      #hero .text-container h2 svg {
+        color: hsla(162, 47%, 50%, 1);
+        height: 2rem;
+        left: -0.25rem;
+        position: absolute;
+        top: 0;
+        width: 2rem;
+      }
+      #hero .text-container h2 span {
+        margin-left: 2.5rem;
+      }
+      #hero .text-container a {
+        background-color: rgba(255, 255, 255, 1);
+        border-radius: 0.75rem;
+        color: rgba(55, 65, 81, 1);
+        display: inline-block;
+        margin-top: 1.5rem;
+        padding: 1rem 2rem;
+        text-decoration: inherit;
+      }
+      #hero .logo-container {
+        display: none;
+        justify-content: center;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
+      #hero .logo-container svg {
+        color: rgba(255, 255, 255, 1);
+        width: 66.666667%;
+      }
+      #middle-content {
+        align-items: flex-start;
+        display: grid;
+        gap: 4rem;
+        grid-template-columns: 1fr;
+        margin-top: 3.5rem;
+      }
+      #learning-materials {
+        padding: 2.5rem 2rem;
+      }
+      #learning-materials h2 {
+        font-weight: 500;
+        font-size: 1.25rem;
+        letter-spacing: -0.025em;
+        line-height: 1.75rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .list-item-link {
+        align-items: center;
+        border-radius: 0.75rem;
+        display: flex;
+        margin-top: 1rem;
+        padding: 1rem;
+        transition-property: background-color, border-color, color, fill, stroke,
+          opacity, box-shadow, transform, filter, backdrop-filter,
+          -webkit-backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+        width: 100%;
+      }
+      .list-item-link svg:first-child {
+        margin-right: 1rem;
+        height: 1.5rem;
+        transition-property: background-color, border-color, color, fill, stroke,
+          opacity, box-shadow, transform, filter, backdrop-filter,
+          -webkit-backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+        width: 1.5rem;
+      }
+      .list-item-link > span {
+        flex-grow: 1;
+        font-weight: 400;
+        transition-property: background-color, border-color, color, fill, stroke,
+          opacity, box-shadow, transform, filter, backdrop-filter,
+          -webkit-backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+      .list-item-link > span > span {
+        color: rgba(107, 114, 128, 1);
+        display: block;
+        flex-grow: 1;
+        font-size: 0.75rem;
+        font-weight: 300;
+        line-height: 1rem;
+        transition-property: background-color, border-color, color, fill, stroke,
+          opacity, box-shadow, transform, filter, backdrop-filter,
+          -webkit-backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+      .list-item-link svg:last-child {
+        height: 1rem;
+        transition-property: all;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+        width: 1rem;
+      }
+      .list-item-link:hover {
+        color: rgba(255, 255, 255, 1);
+        background-color: hsla(162, 47%, 50%, 1);
+      }
+      .list-item-link:hover > span {
+      }
+      .list-item-link:hover > span > span {
+        color: rgba(243, 244, 246, 1);
+      }
+      .list-item-link:hover svg:last-child {
+        transform: translateX(0.25rem);
+      }
+      #other-links {
+      }
+      .button-pill {
+        padding: 1.5rem 2rem;
+        margin-bottom: 2rem;
+        transition-duration: 300ms;
+        transition-property: background-color, border-color, color, fill, stroke,
+          opacity, box-shadow, transform, filter, backdrop-filter,
+          -webkit-backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        align-items: center;
+        display: flex;
+      }
+      .button-pill svg {
+        transition-property: background-color, border-color, color, fill, stroke,
+          opacity, box-shadow, transform, filter, backdrop-filter,
+          -webkit-backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+        flex-shrink: 0;
+        width: 3rem;
+      }
+      .button-pill > span {
+        letter-spacing: -0.025em;
+        font-weight: 400;
+        font-size: 1.125rem;
+        line-height: 1.75rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      .button-pill span span {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 300;
+        line-height: 1.25rem;
+      }
+      .button-pill:hover svg,
+      .button-pill:hover {
+        color: rgba(255, 255, 255, 1) !important;
+      }
+      .nx-console:hover {
+        background-color: rgba(0, 122, 204, 1);
+      }
+      .nx-console svg {
+        color: rgba(0, 122, 204, 1);
+      }
+      #nx-repo:hover {
+        background-color: rgba(24, 23, 23, 1);
+      }
+      #nx-repo svg {
+        color: rgba(24, 23, 23, 1);
+      }
+      #nx-cloud {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        padding: 2.5rem 2rem;
+      }
+      #nx-cloud > div {
+        align-items: center;
+        display: flex;
+      }
+      #nx-cloud > div svg {
+        border-radius: 0.375rem;
+        flex-shrink: 0;
+        width: 3rem;
+      }
+      #nx-cloud > div h2 {
+        font-size: 1.125rem;
+        font-weight: 400;
+        letter-spacing: -0.025em;
+        line-height: 1.75rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      #nx-cloud > div h2 span {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 300;
+        line-height: 1.25rem;
+      }
+      #nx-cloud p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        margin-top: 1rem;
+      }
+      #nx-cloud pre {
+        margin-top: 1rem;
+      }
+      #nx-cloud a {
+        color: rgba(107, 114, 128, 1);
+        display: block;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        margin-top: 1.5rem;
+        text-align: right;
+      }
+      #nx-cloud a:hover {
+        text-decoration: underline;
+      }
+      #commands {
+        padding: 2.5rem 2rem;
+        margin-top: 3.5rem;
+      }
+      #commands h2 {
+        font-size: 1.25rem;
+        font-weight: 400;
+        letter-spacing: -0.025em;
+        line-height: 1.75rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      #commands p {
+        font-size: 1rem;
+        font-weight: 300;
+        line-height: 1.5rem;
+        margin-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      details {
+        align-items: center;
+        display: flex;
+        margin-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        width: 100%;
+      }
+      details pre > span {
+        color: rgba(181, 181, 181, 1);
+      }
+      summary {
+        border-radius: 0.5rem;
+        display: flex;
+        font-weight: 400;
+        padding: 0.5rem;
+        cursor: pointer;
+        transition-property: background-color, border-color, color, fill, stroke,
+          opacity, box-shadow, transform, filter, backdrop-filter,
+          -webkit-backdrop-filter;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        transition-duration: 150ms;
+      }
+      summary:hover {
+        background-color: rgba(243, 244, 246, 1);
+      }
+      summary svg {
+        height: 1.5rem;
+        margin-right: 1rem;
+        width: 1.5rem;
+      }
+      #love {
+        color: rgba(107, 114, 128, 1);
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+        margin-top: 3.5rem;
+        opacity: 0.6;
+        text-align: center;
+      }
+      #love svg {
+        color: rgba(252, 165, 165, 1);
+        width: 1.25rem;
+        height: 1.25rem;
+        display: inline;
+        margin-top: -0.25rem;
+      }
+      @media screen and (min-width: 768px) {
+        #hero {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        #hero .logo-container {
+          display: flex;
+        }
+        #middle-content {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+    </style>
+    <div class="wrapper">
+      <div class="container">
+        <div id="welcome">
+          <h1>
+            <span> Hello there, </span>
+            Welcome host 👋
+          </h1>
+        </div>
     </div>
-
-  <div class="columns" translate>
-    <div class="column col-12" translate>
-      <ngx-table
-        [configuration]="configuration"
-        [summaryTemplate]="summaryTemplateRef"
-        [loadingTemplate]="loadingTemplate"
-        [filtersTemplate]="filtersTemplate"
-        [data]="data"
-        [columns]="columns"
-        [pagination]="pagination"
-        (event)="eventEmitted($event)"
-        translate >
-
-        <ng-template let-row let-index="index">
-          <td>
-            <h5>#{{ row.Id }}</h5>
-          </td>
-          <td>
-            <p style="font-size:1rem">
-              {{row.NameEn }}
-            </p>
-          </td>
-          <td>
-            <p style="font-size:1rem" >
-              {{row.NameAr}}
-            </p>
-          </td>
-          <td>
-            <div >
-              <p style="font-size:1rem">
-                {{row.Description}}
-              </p>
-            </div>
-          </td>
-          <td>
-            <p style="font-size:1rem" [ngClass]="row.IsDeleted ? '' : '' ">
-              {{row.IsDeleted | yesNo }}
-            </p>
-          </td>
-          <td>
-            <button nbButton size="small" status="primary"
-            id="expandButton-{{ index }}"
-            (click)="onEditDialogClicked(row.Id)"
-            translate>
-              <nb-icon [options]="{ animation: { type: 'shake' } }" icon="edit-outline"></nb-icon>
-            </button>
-          </td>
-          <td *ngIf="!row.IsDeleted">
-            <button nbButton size="small" status="danger"
-            id="expandButton-{{ index }}"
-            (click)="onDeletedClicked(row.Id)"
-            translate>
-              <nb-icon [options]="{ animation: { type: 'flip in Y' } }" icon="trash-2-outline"></nb-icon>
-            </button>
-          </td>
-
-          <td *ngIf="row.IsDeleted">
-            <button nbButton size="small" status="warning"
-            id="expandButton-{{ index }}"
-            (click)="onReactivateClicked(row.Id)"
-            translate>
-              <nb-icon [options]="{ animation: { type: 'zoom' } }" icon="refresh-outline"></nb-icon>
-            </button>
-          </td>
-        </ng-template>
-      </ngx-table>
-      <ng-template #summaryTemplateRef let-total="total" let-limit="limit" let-page="page">
-        <th colspan="5" translate>
-          <span class="mb-2" translate>table.total-items</span>
-          <span class="mb-2">: {{ pagination.count }} </span>
-          <span class="mb-2">page: {{ page }} </span>
-        </th>
-      </ng-template>
-    </div>
-  </div>
-
-  <ng-template #loadingTemplate>
-    <td [attr.colspan]="columns.length">
-      <div class="loader">Loading...</div>
-    </td>
-  </ng-template>
-
-  <ng-template #filtersTemplate>
-    <th>
-      <input
-      type="number"
-      nbInput fullWidth
-      id="code"
-      placeholder="{{ 'lookups.id' | translate }}"
-      (keyup.enter)="onIdFilterChnaged($event)"
-      [(ngModel)]="lookupParamsDto.Id"
-      >
-    </th>
-    <th>
-      <e-proc-custom-input
-      [isRequired]="false"
-      [disabled]="false"
-      [readonly]="false"
-      [placeHolder]=" 'lookups.name-en' "
-      [(selectedItem)]="lookupParamsDto.NameEn"
-      (keyup.enter)="onIdFilterChnaged($event)" >
-      </e-proc-custom-input>
-    </th>
-    <th>
-      <e-proc-custom-input
-      [isRequired]="false"
-      [disabled]="false"
-      [readonly]="false"
-      [placeHolder]=" 'lookups.name-ar' "
-      [(selectedItem)]="lookupParamsDto.NameAr"
-      (keyup.enter)="onIdFilterChnaged($event)" >
-      </e-proc-custom-input>
-    </th>
-    <th>
-      <e-proc-custom-input
-      [isRequired]="false"
-      [disabled]="false"
-      [readonly]="false"
-      [placeHolder]=" 'lookups.description' "
-      [(selectedItem)]="lookupParamsDto.Description"
-      (keyup.enter)="onIdFilterChnaged($event)" >
-      </e-proc-custom-input>
-    </th>
-    <th>
-      <e-proc-boolean-dropdown
-      [isRequired]="true"
-      [disabled]="false"
-      [readonly]="false"
-      [selectedItem]="lookupParamsDto.IsDeleted"
-      (selectedItemChanged)="onDeletedFilterChnaged($event)">
-      </e-proc-boolean-dropdown>
-    </th>
-
-    <th>
-
-
-    </th>
-  </ng-template>
-  </nb-card-body>
-</nb-card>
-
   `,
   styles: [],
   encapsulation: ViewEncapsulation.None,
 })
-export class NxWelcomeComponent implements OnInit , OnDestroy {
-
-  private log = new Logger(NxWelcomeComponent.name);
-  private ngUnsubscribe: Subject<void> = new Subject<void>();
-  private subs: Subscription[] = [];
-  selectedItem = '2';
-
-  public configuration: Config;
-  public columns: Columns[];
-  public pagination = {
-    limit: 10,//page-size
-    offset: 0,//page index
-    count: -1,
-    sort: '',
-    order: '',
-  };
-
-  data: LookupDto[] = [
-    {Id:1, NameEn:"Admin",NameAr:"مدير النظام",Description:"super admin over system" },
-    {Id:2, NameEn:"Monitor",NameAr:"مراقب",Description:"view system" }
-  ] ;
-  lookupParamsDto = new LookupParameters();
-
-  dropDownAllOption = new LookupDto(AppDefaultValues.DropDownAllOption,
-    AppDefaultValues.DropDownAllOptionAr,
-     AppDefaultValues.DropDownAllOptionEn);
-
-  constructor(private toastNotificationService:ToastNotificationService,
-    // private readonly cdr: ChangeDetectorRef,
-    public localizationService: TranslateService,
-    private windowService: NbWindowService) {
-
-    this.lookupParamsDto.IsDeleted = false;
-    this.lookupParamsDto.PageIndex = 1;
-    this.lookupParamsDto.PageSize = this.pagination.limit;
-    this.lookupParamsDto.Search = "";
-    this.getTableHeaderName();
-  }
-
-  getTableHeaderName() {
-
-    const isEngLanguage = this.localizationService.currentLang === 'en-US';
-    this.columns = [
-    { key: 'Id', title: isEngLanguage ? 'Id' : 'الرقم التعريفي' },
-    { key: 'NameEn', title: isEngLanguage ? 'Name english' : 'الاسم الانجليزي' },
-    { key: 'NameAr', title: isEngLanguage ? 'Name arabic' : 'الاسم لعربي' },
-    { key: 'Description', title: isEngLanguage ? 'Description' : 'التفاصيل' },
-    { key: 'IsDeleted', title: isEngLanguage ? 'Is deleted' : 'هل تم مسة' },
-    ];
-
-  }
-
-  ngOnInit() {
-    this.configuration = { ...DefaultConfig };
-    this.configuration.tableLayout.hover = !this.configuration.tableLayout.hover;
-    this.configuration.tableLayout.striped = !this.configuration.tableLayout.striped;
-    this.configuration.tableLayout.style = 'big';
-    this.configuration.isLoading = true;
-    this.configuration.serverPagination = true;
-    this.configuration.threeWaySort = true;
-    this.configuration.resizeColumn = true;
-    this.configuration.rowReorder = true;
-    this.configuration.columnReorder = true;
-    this.configuration.fixedColumnWidth = false;
-    // this.getData();
-    this.configuration = { ...DefaultConfig };
-  }
-
-  ngOnDestroy() {
-    this.subs.forEach((s) => s.unsubscribe());
-    this.ngUnsubscribe.next();
-    this.ngUnsubscribe.complete();
-  }
-
-
-  onReactivateClicked(valueId: number) {
-    const lookupDto = this.data.find(x=> x.Id === valueId);
-    lookupDto.IsDeleted = false;
-  }
-
-  onDetailsClicked(ticketId: number) {
-    // let URL = RolesRoutes.Details.replace(RoutesParamRegx.Id, ticketId.toString());
-    // this.router.navigateByUrl(URL);
-  }
-
-  onDeletedClicked(valueId: any): void {
-
-
-  }
-
-  onAddDialogClicked(){
-
-  }
-
-  onEditDialogClicked(valueId: number){
-
-  }
-
-  //to get the sor filter event of the grid
-  eventEmitted(event: any): void {
-    if (event.event !== 'onClick') {
-      this.parseEvent(event);
-    }
-  }
-
-  //to get the sor filter event of the grid
-  private parseEvent(obj: EventObject): void {
-
-  }
-
-  onNameEnFilterChnaged(valueId: any) {
-    // this.lookupParamsDto.StatusId = valueId;
-  }
-
-  onNameArFilterChnaged(valueId: any) {
-    // this.lookupParamsDto.StatusId = valueId;
-  }
-
-  onIdFilterChnaged(valueId: any) {
-    // this.lookupParamsDto.StatusId = valueId;
-  }
-
-  onDeletedFilterChnaged(valueId: any) {
-    this.lookupParamsDto.IsDeleted = valueId;
-  }
-
-
-  exportToCSV(): void {
-    const options = {
-      fieldSeparator: ',',
-      quoteStrings: '"',
-      decimalSeparator: '.',
-      showLabels: true,
-      showTitle: false,
-      useTextFile: false,
-      useBom: true,
-      useKeysAsHeaders: true,
-    };
-    const csvExporter = new ExportToCsv(options);
-
-    csvExporter.generateCsv(this.data);
-  }
-
-}
+export class NxWelcomeComponent {}

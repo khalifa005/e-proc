@@ -17,3 +17,5 @@ export * from './lib/services/toast-notification.service';
 export * from './lib/components/dropdowns/boolean-dropdown/boolean-dropdown.component';
 
 export * from './lib/components/drag-file-uploader/drag-file-uploader.component';
+export * from './lib/components/inputs/custom-input/custom-input.component';
+export * from './lib/components/inputs/custom-textarea/custom-textarea.component';

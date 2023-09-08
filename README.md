@@ -3,12 +3,8 @@
 
 <p align="center">
   <img src="./libs/core/src/lib/assets/images/logo.png?raw=true" width="70" alt="Sublime's custom image">
+  ✨ **Kh-admin tempalte will save angular developers +20 working hours** ✨
 </p>
-
-
-<a alt="Nx logo" href="https://nx.dev" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/nrwl/nx/master/images/nx-logo.png" width="45"></a>
-
-✨ **KhAdmin Will save angular developers +20 working hours** ✨
 
 
 ## Features
@@ -46,6 +42,12 @@
 
 17- Toast notification   
 
+### There is a demo for 
+1- (e-proc) app single app using the shared angualr libs 
+
+2- (host) app that use the dynamic model federation the host app will call a remote service (whic is also angular app or could be react) on another domain also will be using the shared angualr libs 
+
+this project covers common features related to angular Micro Frontends Architecture
 
 ## Start the app
 
@@ -100,16 +102,26 @@ Nx comes with local caching already built-in (check your `nx.json`). On CI you m
 
 ## Addtional commands for running the apps
 npx nx serve e-proc
+
 npx nx serve host --devRemotes=service1
+
 npx nx graph
+
 npx nx run host:build:production
+
 npx nx run host:build:production --skip-nx-cache
+
 
 ## Commands for generating libs
 npx nx g @nx/angular:lib dashboard
+
 npx nx g @nx/angular:lib nebular
+
 npx nx g @nx/angular:component header --project=nebular --export
+
 npx nx g @nx/angular:lib core
+
 npx nx g @nx/angular:service services/i18n --project=core --skip-tests
+
 npx nx g @nx/angular:lib products --routing true --lazy true parent-module=apps/host/src/app/app.module.ts
 

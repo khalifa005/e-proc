@@ -5,7 +5,7 @@
   <img src="./libs/core/src/lib/assets/images/logo.png?raw=true" width="70" alt="Sublime's custom image">
 </p>
 
- ✨ **Kh-admin tempalte will save angular developers +20 working hours** ✨
+ ✨ **Kh-admin template will save angular developers +20 working hours** ✨
 
 [Watch the live demo video Ar version](https://youtu.be/LfXIjkOTwsQ)
 [Watch the live demo video En version](https://youtu.be/AxZ6mqya47w)

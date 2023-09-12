@@ -14,6 +14,7 @@ import { NgxPermissionsGuard, NgxPermissionsModule } from 'ngx-permissions';
 import { UserManagementRoutingModule } from './user-management-routing.module';
 import { UserManagementComponent } from './user-management.component';
 import { NebularModule } from '@e-proc/nebular';
+import { RolesManagementComponent } from './roles-management/roles-management.component';
 
 @NgModule({
   imports: [
@@ -48,7 +49,7 @@ import { NebularModule } from '@e-proc/nebular';
   ],
   declarations: [
      UserManagementComponent,
-    //  RolesManagementComponent,
+     RolesManagementComponent,
 
 
   ]

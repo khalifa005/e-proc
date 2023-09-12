@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { ApiResponse, environment, LookupDto, LookupParameters, PagedResponse } from '@e-proc/core';
+import { RolesManagementDto } from '../../../user-management/models/role-management.dto';
 @Injectable({
   providedIn: 'root',
 })
@@ -60,9 +61,9 @@ export class RoleApiService {
   return this.http.post<any>(`${this.apiURL}/functions`,roleId);
 }
 
-// saveRoleFunctions(rolesFunction: RolesManagementDto): Observable<any> {
-//   return this.http.put<any>(`${this.apiURL}/editfunctions`,rolesFunction);
-// }
+saveRoleFunctions(rolesFunction: RolesManagementDto): Observable<any> {
+  return this.http.put<any>(`${this.apiURL}/editfunctions`,rolesFunction);
+}
 
 
 }

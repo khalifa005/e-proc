@@ -22,7 +22,6 @@
       <ngx-table
         [configuration]="configuration"
         [summaryTemplate]="summaryTemplateRef"
-        [loadingTemplate]="loadingTemplate"
         [filtersTemplate]="filtersTemplate"
         [data]="data"
         [columns]="columns"
@@ -57,30 +56,30 @@
             </p>
           </td>
           <td>
-            <!-- <button nbButton size="small" status="primary"
+            <button nbButton size="small" status="primary"
             id="expandButton-{{ index }}"
             (click)="onEditDialogClicked(row.Id)"
-            translate> -->
+            translate>
 
-              <!-- <nb-icon [options]="{ animation: { type: 'shake' } }" icon="edit-outline"></nb-icon> -->
-            <!-- </button> -->
+             <nb-icon [options]="{ animation: { type: 'shake' } }" icon="edit-outline"></nb-icon>
+            </button>
           </td>
           <td *ngIf="!row.IsDeleted">
-            <!-- <button nbButton size="small" status="danger"
+            <button nbButton size="small" status="danger"
             id="expandButton-{{ index }}"
             (click)="onDeletedClicked(row.Id)"
             translate>
               <nb-icon [options]="{ animation: { type: 'flip in Y' } }" icon="trash-2-outline"></nb-icon>
-            </button> -->
+            </button>
           </td>
 
           <td *ngIf="row.IsDeleted">
-            <!-- <button nbButton size="small" status="warning"
+            <button nbButton size="small" status="warning"
             id="expandButton-{{ index }}"
             (click)="onReactivateClicked(row.Id)"
             translate>
               <nb-icon [options]="{ animation: { type: 'zoom' } }" icon="refresh-outline"></nb-icon>
-            </button> -->
+            </button>
           </td>
         </ng-template>
       </ngx-table>

@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NgxPermissionsGuard } from 'ngx-permissions';
-// import { RolesManagementComponent } from './roles-management/roles-management.component';
 import { UserManagementComponent } from './user-management.component';
+import { RolesManagementComponent } from './roles-management/roles-management.component';
 
 
 
@@ -18,7 +18,7 @@ const routes: Routes = [{
   children: [
     {
       path: 'rolesmanagement',
-      // component: RolesManagementComponent,
+      component: RolesManagementComponent,
     },
 ],
 }];

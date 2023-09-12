@@ -14,6 +14,7 @@ import { NgxPermissionsModule } from 'ngx-permissions';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import * as echarts from 'echarts';
 import { TableModule } from 'ngx-easy-table';
+import { TreeviewModule } from '@treeview/ngx-treeview';
 
 @NgModule({
   declarations: [AppComponent, NxWelcomeComponent],
@@ -45,7 +46,7 @@ import { TableModule } from 'ngx-easy-table';
     NbChatModule.forRoot({
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
-
+    TreeviewModule.forRoot(),
 
   ],
   providers: [],

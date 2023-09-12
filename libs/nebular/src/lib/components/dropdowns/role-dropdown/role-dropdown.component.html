@@ -1,0 +1,49 @@
+<div class="form-group" *ngIf="formcontrol !== undefined">
+
+  <label *ngIf="lable" for="roleId" class="label" translate>{{lable}}</label>
+
+  <nb-select
+    class="d-inline"
+    id="roleId"
+    [multiple]="isMultiple"
+    [disabled]="disabled"
+    [status]="(formcontrol.invalid && (formcontrol.dirty || formcontrol.touched)) ? 'danger' : null"
+    [formControl]="formcontrol">
+
+    <nb-option [value]="dropDownAllOption.Id" *ngIf="!isMultiple">
+      {{dropDownAllOption.NameEn | translator : dropDownAllOption.NameAr}}
+    </nb-option>
+    <nb-option *ngFor="let x of items" [value]="x.Id" >
+        {{x.NameEn | translator : x.NameAr}}
+    </nb-option>
+  </nb-select>
+
+  <div
+    translate
+    class="text-danger"
+    *ngIf="formcontrol.invalid && (formcontrol.dirty || formcontrol.touched)">
+    validations.please-provide-value
+  </div>
+  </div>
+
+
+  <div class="form-group" *ngIf="formcontrol === undefined">
+
+  <label *ngIf="lable" for="roleId" class="label" translate>{{lable}}</label>
+  <nb-select
+    class="d-inline"
+    id="roleId"
+    [disabled]="disabled"
+    [required]="isRequired"
+    [(ngModel)]="selectedItem"
+    (selectedChange)="onItemChanged($event)">
+    <!-- [formControl]="formcontrol" -->
+
+    <nb-option [value]="dropDownAllOption.Id" >
+      {{dropDownAllOption.NameEn | translator : dropDownAllOption.NameAr}}
+    </nb-option>
+    <nb-option *ngFor="let x of items" [value]="x.Id" >
+        {{x.NameEn | translator : x.NameAr}}
+    </nb-option>
+  </nb-select>
+  </div>

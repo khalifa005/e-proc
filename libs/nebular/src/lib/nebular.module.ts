@@ -50,6 +50,7 @@ import { RouterModule } from '@angular/router';
 import { YesNoDropdownComponent } from './components/dropdowns/yes-no-dropdown/yes-no-dropdown.component';
 import { BooleanDropdownComponent } from './components/dropdowns/boolean-dropdown/boolean-dropdown.component';
 import { DragFileUploaderComponent } from './components/drag-file-uploader/drag-file-uploader.component';
+import { RoleDropdownComponent } from './components/dropdowns/role-dropdown/role-dropdown.component';
 
 const NB_MODULES = [
   TranslateModule,
@@ -85,6 +86,7 @@ const COMPONENTS = [
   YesNoDropdownComponent,
   BooleanDropdownComponent,
   DragFileUploaderComponent,
+  RoleDropdownComponent,
 ];
 
 const PIPES = [

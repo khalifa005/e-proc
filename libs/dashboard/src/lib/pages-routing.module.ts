@@ -47,6 +47,12 @@ const routes: Routes = [{
         // canLoad:[]
     },
     {
+      path: 'user-management',
+      loadChildren: () => import('./pages/user-management/user-management.module')
+        .then(m => m.UserManagementModule),
+        // canLoad:[]
+    },
+    {
       //this will affect the first page once the app is loaded for the first time because it's not having any URL
       path: '',
       redirectTo: 'home',

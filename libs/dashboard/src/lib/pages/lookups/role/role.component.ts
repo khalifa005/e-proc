@@ -36,10 +36,13 @@ export class RoleComponent implements OnInit , OnDestroy {
     order: '',
   };
 
-  data: LookupDto[] = [
-    {Id:1, NameEn:"Admin",NameAr:"مدير النظام",Description:"super admin over system" },
-    {Id:2, NameEn:"Monitor",NameAr:"مراقب",Description:"view system" }
-  ] ;
+  data: LookupDto[] = [ ] ;
+
+  // data: LookupDto[] = [
+  //   {Id:1, NameEn:"Admin",NameAr:"مدير النظام",Description:"super admin over system" },
+  //   {Id:2, NameEn:"Monitor",NameAr:"مراقب",Description:"view system" }
+  // ] ;
+
   lookupParamsDto = new LookupParameters();
 
   dropDownAllOption = new LookupDto(AppDefaultValues.DropDownAllOption,
@@ -84,7 +87,7 @@ export class RoleComponent implements OnInit , OnDestroy {
     this.configuration.rowReorder = true;
     this.configuration.columnReorder = true;
     this.configuration.fixedColumnWidth = false;
-    // this.getData();
+    this.getData();
     this.configuration = { ...DefaultConfig };
   }
 

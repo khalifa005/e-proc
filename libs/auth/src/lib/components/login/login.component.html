@@ -1,0 +1,72 @@
+<div class="row acig-pt-7p">
+  <div class="col-lg-6"></div>
+  <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+    <div class="logo-container" style="text-align: center;padding-bottom: 10px;">
+
+        <img src="/assets/amana-logo.ico" alt="" height="100px" width="250">
+    </div>
+      <nb-card>
+          <nb-card-header translate>registeration.log-in</nb-card-header>
+          <nb-card-body >
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" novalidate>
+
+
+                      <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <!--username-->
+                            <div class="form-group">
+                              <label class="label" for="username" translate>login.username</label>
+
+                              <input type="text" nbInput fullWidth id="username" name="username" formControlName="username"
+                                placeholder="{{ 'registeration.username' | translate }}"
+                                [status]=" !username?.valid && (username?.dirty ||username?.touched) ? 'danger' : null">
+
+                              <div *ngIf="!username?.valid && (username?.dirty ||username?.touched)">
+                                <div class="text-danger" [hidden]="!username.errors!.required" translate>
+                                  validations.field-required
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                              <!--password-->
+                              <div class="form-group">
+                                <label class="label" for="password" translate>login.password</label>
+
+                                <input type="password" nbInput fullWidth id="password" name="password" formControlName="password"
+                                  placeholder="{{ 'registeration.password' | translate }}"
+                                  [status]=" !password?.valid && (password?.dirty ||password?.touched) ? 'danger' : null">
+
+                                <div *ngIf="!password?.valid && (password?.dirty ||password?.touched)">
+                                  <div class="text-danger" [hidden]="!password.errors.required" translate>
+                                    validations.field-required
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                        </div>
+                      <div class="form-group row " style="text-align: center;">
+                          <div class="col-lg-4 col-md-4 col-sm-1 col-xs-1">
+
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                              <button type="submit" [disabled]="isDisablebutton" [nbSpinner]="loadingSpinner" nbSpinnerStatus="success" nbButton status="primary"
+                                  translate>registeration.log-in</button>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-3 col-xs-1">
+
+                          </div>
+
+                      </div>
+                  </form>
+              </div>
+          </nb-card-body>
+      </nb-card>
+  </div>
+</div>
+
+<!-- <nb-layout style="display: none"></nb-layout> -->

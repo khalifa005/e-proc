@@ -1,0 +1,35 @@
+.appearance-filled,
+.appearance-outline {
+  text-transform: none !important;
+  margin: 2px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+[nbButton].appearance-outline {
+  width: fit-content !important;
+ }
+}
+
+.backgroung-image-registeration {
+  background-size: 100% 100%;
+}
+
+.backgroung-image-registeration-ar {
+  background-size: 100% 100%;
+}
+
+.acig-pt-7p {
+  padding-top: 7% !important;
+}
+
+
+.divRegisterMobileNumber #mobilenumber{
+  padding-left: 48px;
+}
+.divRegisterMobileNumber > .mobileSuffix{
+  position: absolute;
+  left: 20px;
+  padding-top: 10px;
+  font-weight: bold;
+}

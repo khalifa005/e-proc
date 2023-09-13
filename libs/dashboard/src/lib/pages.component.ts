@@ -7,7 +7,9 @@ import { Component, OnInit, ChangeDetectorRef, OnDestroy } from "@angular/core";
   selector: 'e-proc-pages',
   styleUrls: ['pages.component.scss'],
   template: `
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
+
+
  <!-- <nb-layout></nb-layout> -->
 
   `,

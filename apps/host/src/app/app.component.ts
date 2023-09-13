@@ -1,9 +1,11 @@
+/* eslint-disable @nx/enforce-module-boundaries */
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Logger, I18nService, environment } from '@e-proc/core';
 import { NbMenuItem } from '@nebular/theme';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import { MENU_ITEMS } from './app-side-menu';
+import { AuthService, UserStoreService } from '@e-proc/auth';
 
 @Component({
   selector: 'e-proc-root',
@@ -13,6 +15,7 @@ import { MENU_ITEMS } from './app-side-menu';
 export class AppComponent implements OnInit, OnDestroy {
     private log = new Logger(AppComponent.name);
     title = 'host';
+    isAuthenticated = false;
 
     //here is the main page that will still appear in all the app
       menu!: NbMenuItem[];
@@ -25,12 +28,17 @@ export class AppComponent implements OnInit, OnDestroy {
         public localizationService: TranslateService,
         private changeDetectorRef: ChangeDetectorRef,
         private i18nService: I18nService,
+        private authService: AuthService,
+        private userStoreService : UserStoreService,
         private router: Router)
         {
 
         }
 
         ngOnInit(): void {
+
+          this.trackAuthentication();
+
           this.i18nService.init("en-US", ['en-US', 'ar-SA']);
           this.sideMenuTranslationInt();
           if (environment.production) {
@@ -94,9 +102,21 @@ export class AppComponent implements OnInit, OnDestroy {
         this.menu = menuTranslated;
        }
 
-       ngOnDestroy() {
+       trackAuthentication() {
+        this.userStoreService.getFullNameFromStore()
+        .subscribe(val =>{
+          this.log.info("trackAuthentication");
+          this.isAuthenticated = this.authService.isLoggedIn();
+          this.log.info(this.isAuthenticated);
+
+        });
+
+      }
+
+      ngOnDestroy() {
         this.i18nService.destroy();
     // if (this.subForSubject) this.subForSubject.unsubscribe();
       }
+
     }
 

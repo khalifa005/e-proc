@@ -1,3 +1,4 @@
+/* eslint-disable @angular-eslint/no-empty-lifecycle-method */
 /* eslint-disable @typescript-eslint/adjacent-overload-signatures */
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { NbDialogService, NbWindowService } from '@nebular/theme';
@@ -21,7 +22,7 @@ export class HomeComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    this.authService.fakeLogin();
+    // this.authService.fakeLogin();
   }
 
 

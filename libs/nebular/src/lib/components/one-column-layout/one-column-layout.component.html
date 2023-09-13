@@ -3,7 +3,7 @@
     <e-proc-header [isAuthenticated]="isAuthenticated"></e-proc-header>
   </nb-layout-header>
 
-  <nb-sidebar  class="menu-sidebar" tag="menu-sidebar" responsive start>
+  <nb-sidebar *ngIf="isAuthenticated" class="menu-sidebar" tag="menu-sidebar" responsive start>
     <ng-content select="nb-menu"></ng-content>
   </nb-sidebar>
 

@@ -5,10 +5,16 @@ import { RouterModule } from '@angular/router';
 import { RemoteEntryComponent } from './entry.component';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { remoteRoutes } from './entry.routes';
-
+import { NgxPermissionsModule } from 'ngx-permissions';
+import { AuthService } from '@e-proc/auth';
 @NgModule({
   declarations: [RemoteEntryComponent, NxWelcomeComponent],
-  imports: [CommonModule, RouterModule.forChild(remoteRoutes)],
-  providers: [],
+  imports: [
+    CommonModule,
+    // NgxPermissionsModule.forChild(),
+    RouterModule.forChild(remoteRoutes)],
+    providers: [AuthService],
+
+  // exports:[NgxPermissionsModule]
 })
 export class RemoteEntryModule {}

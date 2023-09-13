@@ -4,7 +4,7 @@ import { PagesComponent } from './pages.component';
 import { TreeviewModule } from '@treeview/ngx-treeview';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
-import { NgxPermissionsModule } from 'ngx-permissions';
+import { NgxPermissionsGuard, NgxPermissionsModule } from 'ngx-permissions';
 import { AuthGuard } from '@e-proc/auth';
 
 const routes: Routes = [{
@@ -14,6 +14,12 @@ const routes: Routes = [{
     {
       path: 'home',
       component: HomeComponent,
+      canActivate: [NgxPermissionsGuard],
+      data: {
+        permissions: {
+          only: ['SuperAdmin'],
+        }
+      }
     },
     {
       path: 'layout',

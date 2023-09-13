@@ -4,20 +4,56 @@ import { TestAuthComponent } from './components/test-auth/test-auth.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { NebularModule } from '@e-proc/nebular';
+import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NbLayoutModule, NbCardModule, NbButtonModule, NbCheckboxModule, NbInputModule, NbActionsModule, NbUserModule, NbRadioModule, NbDatepickerModule, NbSelectModule, NbIconModule, NbSpinnerModule } from '@nebular/theme';
+import { NgxPatternModule } from 'ngx-pattern';
+import { AuthComponent } from './auth.component';
+import { LogoutComponent } from './components/logout/logout.component';
+import { AuthGuard } from './guards/auth.guard';
+import { AuthService } from './services/auth.service';
 
 const routes: Routes = [{
   path: '',
-  component: TestAuthComponent,
+  component: AuthComponent,
+  children: [
+    {
+      path: 'login',
+      component: LoginComponent,
+    },
+    {
+      path: 'logout',
+      component: LogoutComponent,
+    },
+  ],
+  // canActivate:[AuthGuard]
 }];
 
 @NgModule({
   imports: [
     CommonModule,
     NebularModule,
+    TranslateModule,
     RouterModule.forChild(routes),
-    TranslateModule
+    NbLayoutModule,
+    NbCardModule,
+    NbButtonModule,
+    NbCheckboxModule,
+    ReactiveFormsModule,
+    NbInputModule,
+    NbCardModule,
+    NbActionsModule,
+    NbUserModule,
+    NbCheckboxModule,
+    NbRadioModule,
+    NbDatepickerModule,
+    NbSelectModule,
+    NbIconModule,
+    RouterModule,
+    NgxPatternModule,
+    NbSpinnerModule
   ],
-  declarations: [ TestAuthComponent],
-  exports: [TestAuthComponent],
+  declarations: [ TestAuthComponent, LoginComponent, AuthComponent],
+  exports: [TestAuthComponent, LoginComponent,AuthComponent, RouterModule],
 })
 export class AuthModule {}

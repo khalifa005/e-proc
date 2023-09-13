@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NbLayoutDirection } from '@nebular/theme';
 
 @Component({
@@ -7,5 +7,7 @@ import { NbLayoutDirection } from '@nebular/theme';
   styleUrls: ['./one-column-layout.component.scss'],
 })
 export class OneColumnLayoutComponent {
-  isAuthenticated = true;
+  // isAuthenticated = true;
+  @Input() isAuthenticated!: false;
+
 }

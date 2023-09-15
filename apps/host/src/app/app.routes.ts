@@ -1,3 +1,4 @@
+import { AuthGuard } from '@e-proc/auth';
 import { NxWelcomeComponent } from './nx-welcome.component';
 import { Route } from '@angular/router';
 
@@ -16,6 +17,7 @@ export const appRoutes: Route[] = [
   {
     path: '',
     component: NxWelcomeComponent,
+    canActivate:[AuthGuard]
   },
   {
     //this will group all the component into pages component in single view with the side menu par

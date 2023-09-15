@@ -5,11 +5,11 @@ import { RemoteEntryComponent } from './entry.component';
 export const remoteRoutes: Route[] = [
   {
     path: '', component: RemoteEntryComponent,
-    // canActivate: [NgxPermissionsGuard],
-    // data: {
-    //   permissions: {
-    //     only: ['SuperAdmin'],
-    //   }
-    // }
+    canActivate: [NgxPermissionsGuard],
+    data: {
+      permissions: {
+        only: ['SuperAdmin'],
+      }
+    }
    },
 ];

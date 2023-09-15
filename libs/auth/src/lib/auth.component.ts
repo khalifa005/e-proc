@@ -14,13 +14,14 @@ const log = new Logger('AuthComponent');
 export class AuthComponent implements OnInit {
 
   isAuthenticated = false;
-  directions = NbLayoutDirection;
-  constructor(private directionService: NbLayoutDirectionService,
+  // directions = NbLayoutDirection;
+  constructor(
+    // private directionService: NbLayoutDirectionService,
     public translate: TranslateService,
     ) {
-      if(this.translate.currentLang === "ar-SA"){
-        this.directionService.setDirection(this.directions.RTL);
-      }
+      // if(this.translate.currentLang === "ar-SA"){
+      //   this.directionService.setDirection(this.directions.RTL);
+      // }
   }
 
     ngOnInit(): void {

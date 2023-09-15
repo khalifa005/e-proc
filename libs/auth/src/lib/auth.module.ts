@@ -12,6 +12,7 @@ import { AuthComponent } from './auth.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { AuthGuard } from './guards/auth.guard';
 import { AuthService } from './services/auth.service';
+import { NgxPermissionsModule, NgxPermissionsService } from 'ngx-permissions';
 
 const routes: Routes = [{
   path: '',
@@ -54,6 +55,8 @@ const routes: Routes = [{
     NbSpinnerModule
   ],
   declarations: [ TestAuthComponent, LoginComponent, AuthComponent],
-  exports: [TestAuthComponent, LoginComponent,AuthComponent, RouterModule],
+  exports: [TestAuthComponent, LoginComponent,AuthComponent, RouterModule,
+    TranslateModule,
+  ],
 })
 export class AuthModule {}

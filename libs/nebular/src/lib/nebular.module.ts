@@ -54,7 +54,6 @@ import { RoleDropdownComponent } from './components/dropdowns/role-dropdown/role
 
 const NB_MODULES = [
   TranslateModule,
-  NbLayoutModule,
   NbMenuModule,
   NbUserModule,
   NbActionsModule,

@@ -8,14 +8,17 @@ import { NebularModule } from '@e-proc/nebular';
 import { NbToastrModule } from '@nebular/theme';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonModule } from '@angular/common';
-import { AuthService } from '@e-proc/auth';
+import { AuthModule, AuthService } from '@e-proc/auth';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     CommonModule,
+    HttpClientModule,
     BrowserModule,
-    // NgxPermissionsModule,
+    // AuthModule,
+    NgxPermissionsModule.forRoot(),
     RouterModule.forRoot(
       [
         {
@@ -28,7 +31,9 @@ import { AuthService } from '@e-proc/auth';
       ],
       { initialNavigation: 'enabledBlocking' }
     ),
-    // TranslateModule.forRoot(),
+
+    TranslateModule.forRoot(),
+    // NbThemeModule.forRoot({ name: 'default' }),
   ],
   bootstrap: [AppComponent],
 

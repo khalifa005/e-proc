@@ -12,6 +12,8 @@ import { AuthService } from '@e-proc/auth';
   imports: [
     CommonModule,
     // NgxPermissionsModule.forChild(),
+    NgxPermissionsModule,
+
     RouterModule.forChild(remoteRoutes)],
     providers: [AuthService],
 

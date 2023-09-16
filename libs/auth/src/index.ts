@@ -11,3 +11,5 @@ export * from './lib/models/request-password.model';
 export * from './lib/models/reset-password.model';
 export * from './lib/models/forget-password.model';
 export * from './lib/models/otp-verification.model';
+export * from './lib/enums/user-roles.enum';
+export * from './lib/services/herlper';

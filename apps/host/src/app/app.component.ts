@@ -1,10 +1,9 @@
 /* eslint-disable @nx/enforce-module-boundaries */
 import { ChangeDetectorRef, Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Logger, I18nService, environment } from '@e-proc/core';
+import { Logger, I18nService, environment, MENU_ITEMS } from '@e-proc/core';
 import { NbMenuItem } from '@nebular/theme';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { MENU_ITEMS } from './app-side-menu';
 import { AuthService, UserStoreService } from '@e-proc/auth';
 
 @Component({

@@ -1,5 +1,6 @@
 
 export * from './lib/core.module';
+export * from './lib/models/app-side-menu';
 export * from './lib/models/interfaces/event-object.interface';
 export * from './lib/enums/status-code.enum';
 export * from './lib/models/base/lookup.model';

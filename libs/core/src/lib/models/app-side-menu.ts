@@ -1,5 +1,4 @@
-import { NbMenuItem } from '@nebular/theme';
-// import { icon } from 'leaflet';
+import { NbMenuItem } from "@nebular/theme";
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {

@@ -86,7 +86,6 @@ export class LoginComponent implements OnInit {
                 this.authService.storeToken(response.Data.AccessToken);
                 this.authService.InitPayload();
                 const userFullName = this.authService.getUserNameFromToken();
-                this.userStoreService.setFullNameForStore(userFullName ?? "empty-username");
                 this.authService.userRoles = response.Data.UserRoles;
                 //-- SET Permission for User With every Role
                 this.authService.setRolePermissions(response.Data.UserRoles);
@@ -101,6 +100,8 @@ export class LoginComponent implements OnInit {
                   allRoleFunctions.concat(...x.RoleFunctions) ;
                 });
                 loadPermissions(this.permissionsService,response.Data.UserRoles[0].RoleFunctions ?? []);
+                this.userStoreService.setFullNameForStore(userFullName ?? "empty-username");
+
                 // loadPermissions(this.permissionsService,allRoleFunctions ?? []);
 
                 this.loginForm.reset();

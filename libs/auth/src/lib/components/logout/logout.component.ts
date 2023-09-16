@@ -23,7 +23,6 @@ export class LogoutComponent implements OnInit {
 
   ngOnInit(): void {
     this.auth.signOut();
-    this.userStoreService.setFullNameForStore("");
   }
 
   logout(strategy: string): void {

@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { Logger, I18nService, environment, MENU_ITEMS } from '@e-proc/core';
 import { NbMenuItem } from '@nebular/theme';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
-import { AuthService, UserStoreService } from '@e-proc/auth';
+import { AuthService, UserStoreService, sideMenuTranslationIntBasedOnPermissions } from '@e-proc/auth';
 
 @Component({
   selector: 'e-proc-root',
@@ -31,15 +31,18 @@ export class AppComponent implements OnInit, OnDestroy {
         private userStoreService : UserStoreService,
         private router: Router)
         {
+            // Setup translations
+              this.i18nService.init(environment.defaultLanguage, environment.supportedLanguages);
+          this.trackAuthentication();
+
 
         }
 
         ngOnInit(): void {
 
-          this.trackAuthentication();
 
-          this.i18nService.init("en-US", ['en-US', 'ar-SA']);
-          this.sideMenuTranslationInt();
+          // this.i18nService.init("en-US", ['en-US', 'ar-SA']);
+          // this.sideMenuTranslationInt();
           if (environment.production) {
           Logger.enableProductionMode();
           }
@@ -54,10 +57,19 @@ export class AppComponent implements OnInit, OnDestroy {
           }
 
 
-          this.localizationService.onLangChange.subscribe((event: LangChangeEvent) => {
-            this.sideMenuTranslationInt();
 
-           });
+             if(this.isAuthenticated){
+              this.localizationService.onLangChange.subscribe((event: LangChangeEvent) => {
+                this.menu = sideMenuTranslationIntBasedOnPermissions(this.authService, this.localizationService);
+              });
+
+              this.userStoreService.currentSideMenu.subscribe(data =>{
+                 if(data!=null && data != ''){
+                   this.menu = data;
+                 }
+              });
+            }
+
 
 
       }
@@ -107,6 +119,15 @@ export class AppComponent implements OnInit, OnDestroy {
           this.log.info("trackAuthentication");
           this.isAuthenticated = this.authService.isLoggedIn();
           this.log.info(this.isAuthenticated);
+          if(this.isAuthenticated){
+            this.authService.InitPayload();
+            this.menu = sideMenuTranslationIntBasedOnPermissions(this.authService,this.localizationService);
+
+          }
+          else{
+            this.menu = [];
+
+          }
 
         });
 
@@ -114,7 +135,6 @@ export class AppComponent implements OnInit, OnDestroy {
 
       ngOnDestroy() {
         this.i18nService.destroy();
-    // if (this.subForSubject) this.subForSubject.unsubscribe();
       }
 
     }

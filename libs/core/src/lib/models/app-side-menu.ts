@@ -26,6 +26,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'lookups.lookups',
+    data :'lookups',
     icon: 'keypad-outline',
     children: [
       {
@@ -50,6 +51,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
       },
       {
         title: 'lookups.roles',
+        data :'roles',
         icon: 'list-outline',
         link: '/pages/roles',
       },
@@ -63,10 +65,12 @@ export const MENU_ITEMS: NbMenuItem[] = [
   },
   {
     title: 'usermanagement.user-management',
+    data :'user-management',
     icon: 'keypad-outline',
     children:[
       {
         title: 'usermanagement.roles-management',
+       data :'roles-management',
         icon: 'list-outline',
         link: '/pages/user-management/rolesmanagement',
       },
@@ -74,6 +78,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'usermanagement.users',
         icon: 'list-outline',
         link: '/pages/user-management/users',
+        data :'users'
       },
       // {
       //   title: 'usermanagement.calender',

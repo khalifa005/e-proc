@@ -76,6 +76,9 @@ export class AuthService {
     localStorage.removeItem(this.adminAppTokenKey);
     localStorage.removeItem(this.adminCrmRoleKey);
     localStorage.removeItem(this.loggedPermissionsKey);
+    this.permissionsService.flushPermissions();
+    this.userStoreService.setFullNameForStore("");
+
     this.router.navigateByUrl('auth/login');
   }
 

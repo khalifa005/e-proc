@@ -57,6 +57,7 @@
           </td>
           <td>
             <button nbButton size="small" status="primary"
+            *ngxPermissionsOnly="['edit-role', 'SuperAdmin']; authorisedStrategy: 'show'; unauthorisedStrategy: 'remove'"
             id="expandButton-{{ index }}"
             (click)="onEditDialogClicked(row.Id)"
             translate>
@@ -66,6 +67,7 @@
           </td>
           <td *ngIf="!row.IsDeleted">
             <button nbButton size="small" status="danger"
+            *ngxPermissionsOnly="['delete-role', 'SuperAdmin']; authorisedStrategy: 'show'; unauthorisedStrategy: 'remove'"
             id="expandButton-{{ index }}"
             (click)="onDeletedClicked(row.Id)"
             translate>

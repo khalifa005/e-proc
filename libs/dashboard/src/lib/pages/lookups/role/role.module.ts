@@ -16,7 +16,7 @@ const routes: Routes = [{
   canActivate: [NgxPermissionsGuard],
   data: {
     permissions: {
-      only: ['SuperAdmin','view-role-list'],
+      only: ['SuperAdmin','roles'],
     }
   },
   children: [

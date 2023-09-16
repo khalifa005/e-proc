@@ -8,8 +8,8 @@ export function sideMenuTranslationIntBasedOnPermissions(
    localizationService : TranslateService){
   const permissions =   authService.getRolePermissions(authService.getSelectedRole());
   const menuTranslated = MENU_ITEMS.map(u => ({ ...u, }));
-  const role = authService.getSelectedRole();
-  const isSuperAdmin = authService.getSelectedRole() == UserRoleEnum.SuperAdmin;
+  const roleId = authService.getSelectedRole();
+  const isSuperAdmin = roleId == UserRoleEnum.SuperAdmin;
 
   if(permissions.length == 0 || permissions == null || permissions == undefined)
   {
@@ -21,6 +21,8 @@ export function sideMenuTranslationIntBasedOnPermissions(
     //-- check permissions
      if(!isSuperAdmin
      && item.title != "E-commerce"
+     && item.data != undefined
+     && item.data != null
      && !permissions.includes(item.data))
      {
          //-- In Case Has Childerns check data to
@@ -41,7 +43,15 @@ export function sideMenuTranslationIntBasedOnPermissions(
          }
          else
          {
-             item.hidden = true;
+          if(item.data == null || item.data == undefined)
+          {
+            //for items without data (permissions)
+            item.hidden = false;
+          }
+          else
+          {
+            item.hidden = true;
+          }
          }
      }
 
@@ -56,7 +66,13 @@ export function sideMenuTranslationIntBasedOnPermissions(
      subMenuTranslated.forEach(subItem => {
       subItem.hidden = false;
       //-- check permissions
-      if(!isSuperAdmin && permissions.length > 0 && !permissions.includes(subItem.data))
+      if(
+        !isSuperAdmin
+        && permissions.length > 0
+        && !permissions.includes(subItem.data)
+        && subItem.data != undefined
+        && subItem.data != null
+        )
       {
          subItem.hidden = true;
       }

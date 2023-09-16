@@ -20,6 +20,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'remote app',
         icon: 'list-outline',
         link: '/service1',
+        data :'servic-one',
+
       },
 
     ],
@@ -33,32 +35,38 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'lookups.categories',
         icon: 'list-outline',
         link: '/pages/categories',
+        data :'categories'
       },
       {
         title: 'lookups.status',
         icon: 'list-outline',
         link: '/pages/status',
+        data :'status'
       },
       {
         title: 'lookups.cities',
         icon: 'list-outline',
         link: '/pages/cities',
+        data :'cities'
       },
       {
         title: 'lookups.groups',
         icon: 'list-outline',
         link: '/pages/groups',
+        data :'groups'
       },
       {
         title: 'lookups.roles',
-        data :'roles',
         icon: 'list-outline',
         link: '/pages/roles',
+        data :'roles',
+
       },
       {
         title: 'lookups.departments',
         icon: 'list-outline',
         link: '/pages/departments',
+        data :'departments'
       },
 
     ],
@@ -70,9 +78,9 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children:[
       {
         title: 'usermanagement.roles-management',
-       data :'roles-management',
         icon: 'list-outline',
         link: '/pages/user-management/rolesmanagement',
+        data :'roles-management',
       },
       {
         title: 'usermanagement.users',

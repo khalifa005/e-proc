@@ -1,114 +1,91 @@
-
-
-
 <p align="center">
   <img src="./libs/core/src/lib/assets/images/logo.png?raw=true" width="70" alt="Sublime's custom image">
 </p>
 
  ✨ **Kh-admin template will save angular developers +20 working hours** ✨
 
-[Watch the live demo video Ar version](https://youtu.be/LfXIjkOTwsQ)
-[Watch the live demo video En version](https://youtu.be/AxZ6mqya47w)
+- [Watch the live demo (Arabic)](https://youtu.be/LfXIjkOTwsQ)
+- [Watch the live demo (English)](https://youtu.be/AxZ6mqya47w)
+
+---
+
+## Table of Contents
+- [Features](#features)
+- [Coming Features](#coming-features)
+- [Demo Overview](#demo-overview)
+- [Getting Started](#getting-started)
+- [How to Run the Application](#how-to-run-the-application)
+- [Development Commands](#development-commands)
+- [Nx Guide](#nx-guide)
+  - [Generating Code](#generating-code)
+  - [Running Tasks](#running-tasks)
+  - [Editor Integration](#editor-integration)
+  - [Building and Deployment](#building-and-deployment)
+- [CI/CD Setup](#ci-cd-setup)
+- [Commands for Libraries](#commands-for-libraries)
+- [Version Information](#version-information)
+
+---
 
 ## Features
-1- Logging with the ability to controle the log level in production 
+1. **Logging**: Configure and control log levels for production.
+2. **Localization**: Multi-language support for global applications.
+3. **RTL/LTR Support**: Fully supports right-to-left and left-to-right layouts.
+4. **Shared Global Assets**: Assets shared across all apps.
+5. **Nebular Components**: Integrates shared Nebular components.
+6. **Environment Files**: Centralized environment configuration.
+7. **Dashboard Layout**: Multi-theme support with an advanced layout.
+8. **Dynamic Module Federation**: Example provided for dynamically loading modules.
+9. **Angular Material**: Full integration with Angular Material components.
+10. **Graphs and Charts**: Example integrations using D3.js and ECharts.
+11. **Reactive Forms**: Scalable forms with custom input support.
+12. **Paginated Tables**: Using `ngx-easy-table` for advanced data table functionality.
+13. **Google Maps**: Seamless integration with Google Maps.
+14. **Permission Management**: Role-based route protection and content visibility.
+15. **Chatbot**: Built-in chatbot functionality.
+16. **Calendar**: Interactive and user-friendly calendar component.
+17. **Toast Notifications**: Beautiful and customizable toast messages.
 
-2- Localization multi language support
+---
 
-3- Support for RTL LTR 
+## Coming Features
+- **Authentication**: Integration with Keycloak.
+- **Backend Template**: A robust backend template using .NET 8.
 
-4- Global assets shared between apps
+Have recommendations? Share your feedback with us!
 
-5- Nebular components support that will be shared between apps
+---
 
-6- Global environment files shared between the apps
+## Demo Overview
 
-7- Awesome dashboard layout with multi them support  
+- **E-Proc App**: A single Angular application using shared libraries.
+- **Host App**: Demonstrates dynamic module federation. It calls a remote service (Angular or React) on another domain and uses the shared Angular libraries.
 
-8- Demo for dynamic model federation 
+This project explores common features and principles related to Angular Micro Frontends Architecture.
 
-9- Angular matrial support
+---
 
-10- Graphs using D3 and Echarts with examples 
+## Getting Started
 
-11- Scalable reactive forms with customs inputs support
+### Prerequisites
+- **Node.js**: Ensure Node.js is installed on your system.
+- **Nx CLI**: Install Nx CLI globally using `npm install -g nx`.
 
-12- Paginated table using ngx-easy-table
+### Installation
+1. Clone the repository:
+   ```
+   git clone https://github.com/khalifa005/e-proc.git
+   cd e-proc
+   nx serve e-proc 
+   npx nx serve host --devRemotes=service1
+   npx nx graph
+   npx nx run host:build:production
+   //Development Commands
+   npx nx run host:build:production --skip-nx-cache
+   npx nx g @nx/angular:lib <lib-name>
+   npx nx g @nx/angular:lib <lib-name>
+   ```
 
-13- Google maps support 
-
-14- Permission management for the entire application to protect route and hide or show page content based on the user permissions 
-
-15- Chat bot 
-
-16- Calender
-
-17- Toast notification   
-
-## Coming features
-1- Authentication via Keycloak
-
-2- backend tempalte using .Net 8
-
-if you have any recommendation please share it with us
-
-### There is a demo for 
-1- (e-proc) app single app using the shared angualr libs 
-
-2- (host) app that use the dynamic model federation the host app will call a remote service (whic is also angular app or could be react) on another domain also will be using the shared angualr libs 
-
-this project covers common features related to angular Micro Frontends Architecture
-
-## Start the app
-
-To start the development server run `nx serve e-proc`. Open your browser and navigate to http://localhost:4200/. Happy coding!
-
-
-## Generate code
-
-If you happen to use Nx plugins, you can leverage code generators that might come with it.
-
-Run `nx list` to get a list of available plugins and whether they have generators. Then run `nx list <plugin-name>` to see what generators are available.
-
-Learn more about [Nx generators on the docs](https://nx.dev/plugin-features/use-code-generators).
-
-## Running tasks
-
-To execute tasks with Nx use the following syntax:
-
-```
-nx <target> <project> <...options>
-```
-
-You can also run multiple targets:
-
-```
-nx run-many -t <target1> <target2>
-```
-
-..or add `-p` to filter specific projects
-
-```
-nx run-many -t <target1> <target2> -p <proj1> <proj2>
-```
-
-Targets can be defined in the `package.json` or `projects.json`. Learn more [in the docs](https://nx.dev/core-features/run-tasks).
-
-## Want better Editor Integration?
-
-Have a look at the [Nx Console extensions](https://nx.dev/nx-console). It provides autocomplete support, a UI for exploring and running tasks & generators, and more! Available for VSCode, IntelliJ and comes with a LSP for Vim users.
-
-## Ready to deploy?
-
-Just run `nx build demoapp` to build the application. The build artifacts will be stored in the `dist/` directory, ready to be deployed.
-
-## Set up CI!
-
-Nx comes with local caching already built-in (check your `nx.json`). On CI you might want to go a step further.
-
-- [Set up remote caching](https://nx.dev/core-features/share-your-cache)
-- [Set up task distribution across multiple machines](https://nx.dev/core-features/distribute-task-execution)
-- [Learn more how to setup CI](https://nx.dev/recipes/ci)
 
 ## Addtional commands for running the apps
 npx nx serve e-proc
@@ -134,4 +111,33 @@ npx nx g @nx/angular:lib core
 npx nx g @nx/angular:service services/i18n --project=core --skip-tests
 
 npx nx g @nx/angular:lib products --routing true --lazy true parent-module=apps/host/src/app/app.module.ts
+
+
+## Running tasks
+
+To execute tasks with Nx use the following syntax:
+
+```
+nx <target> <project> <...options>
+```
+
+You can also run multiple targets:
+
+```
+nx run-many -t <target1> <target2>
+```
+
+..or add `-p` to filter specific projects
+
+```
+nx run-many -t <target1> <target2> -p <proj1> <proj2>
+```
+## Coming features
+1- Authentication via Keycloak
+
+2- backend tempalte using .Net 8
+
+if you have any recommendation please share it with us
+
+
 

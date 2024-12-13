@@ -251,6 +251,18 @@ npx nx serve e-proc --prod
 ### Live Reloading with Multiple Remotes
 npx nx serve dashboard --devRemotes=service1,service2
 
+
+npx create-nx-workspace@latest --preset=angular-monorepo --skipTests
+
+npx create-nx-workspace workspace --cli=angular --preset=angular --appName=tiny-app --style=scss
+
+nx generate library assets --directory=shared --tags="scope:shared,type:assets" --style=scss
+npx rimraf ./apps/tiny-app/src/assets ./libs/shared/assets/*.js ./libs/shared/assets/*.json ./libs/shared/assets/src/*.* ./libs/shared/assets/src/lib
+
+
+
+
+
 ---
 
 ## Additional Notes

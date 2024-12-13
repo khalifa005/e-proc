@@ -140,4 +140,133 @@ nx run-many -t <target1> <target2> -p <proj1> <proj2>
 if you have any recommendation please share it with us
 
 
+## angular files 
+
+# Angular and Nx Workspace Development Guide
+
+## Table of Contents
+1. Building and Configuration Commands
+2. Nx Workspace Commands
+3. Setup and Cleanup
+4. Official Nx Documentation
+5. To-Do and Pending Tasks
+6. Debugging and Testing
+7. Additional Notes
+8. References
+
+---
+
+## Building and Configuration Commands
+
+### Production Build
+ng build --configuration=production --base-href=/FolderAppNameBasedOnIIS/  
+ng build --configuration=production --base-href=/CrmPortalClient/  
+npm run build:prod
+
+### Staging and Testing
+ng build --configuration=staging  
+ng serve --configuration=production
+
+### Uninstall Unused Packages
+npm uninstall @rxweb/reactive-form-validators  
+npm uninstall @angular/material
+
+---
+
+## Nx Workspace Commands
+
+### Creating an Nx Workspace
+npx create-nx-workspace amana --preset=angular  
+npx create-nx-workspace workspace --cli=angular --preset=angular --appName=tiny-app --style=scss
+
+### Managing Libraries and Components
+- Generate a shared library:  
+  npx nx g library assets --directory=shared --tags="scope:shared,type:assets" --style=css
+
+- Clean up unnecessary files:  
+  npx rimraf ./apps/tiny-app/src/assets ./libs/shared/assets/*.js ./libs/shared/assets/*.json ./libs/shared/assets/src/*.*  
+  npx mkdirp ./libs/shared/assets/src/assets/fonts ./libs/shared/assets/src/assets/icons ./libs/shared/assets/src/assets/images
+
+### Module and Component Generation
+- Generate libraries:  
+  npx nx g @nx/angular:lib core  
+  npx nx g @nx/angular:lib material  
+  npx nx g @nx/angular:lib nebular
+
+- Generate components:  
+  npx nx g @nx/angular:component components/header --project=nebular --export  
+  npx nx g @nx/angular:component containers/login --project=auth --export
+
+---
+
+## Setup and Cleanup
+
+### Node Version Management
+nvm ls  
+npx create-nx-workspace@latest
+
+### Webpack Configuration
+- Ensure shared configurations in webpack.config.ts:  
+  - Use "singleton: true" for shared modules.  
+  - Disable Hot Module Replacement if not needed.
+
+---
+
+## Official Nx Documentation
+
+### Useful Commands
+- Create a host:  
+  npx nx g @angular:host dashboard
+
+- Add remotes to a host:  
+  npx nx g @angular:remote firstService --host=dashboard
+
+### Debug Graph
+npx nx graph
+
+---
+
+## To-Do and Pending Tasks
+
+### E-Proc
+- Import shared styles:  
+  @import 'libs/nebular/src/lib/styles/themes';
+
+### Permission-Based Authorization
+- Demo link: https://www.youtube.com/watch?v=0HqI4uRKxZc
+
+---
+
+## Debugging and Testing
+
+### Testing and Linting
+npx nx test common-ui  
+npx nx lint common-ui
+
+### Running Applications
+npx nx run admin:build:production  
+npx nx run admin:serve --ssl=true  
+npx nx serve e-proc --prod
+
+### Live Reloading with Multiple Remotes
+npx nx serve dashboard --devRemotes=service1,service2
+
+---
+
+## Additional Notes
+
+### Issues and Missing Files
+- Nx Workspace JSON: https://nx.dev/deprecated/workspace-json  
+- Nx and Angular Concepts: https://nx.dev/concepts/more-concepts/nx-and-angular  
+- Storybook Configuration: https://nx.dev/packages/storybook/documents/angular-configuring-styles
+
+---
+
+## References
+
+### Team Members Related to Angular
+- Jay Bishtawi  
+- Duncan Hunter
+
+
 
